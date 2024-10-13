@@ -64,7 +64,7 @@ function Product({ product }) {
 
         {/* Discount Percentage Badge */}
         <div className="absolute top-2 left-2 bg-secondary2 text-text text-xs w-10 rounded-sm flex items-center justify-center">
-          -{product.discountPercentage}%
+          -{Math.round(product.discountPercentage)}%
         </div>
 
         {/* Shopping Cart Icon */}
