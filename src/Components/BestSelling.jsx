@@ -3,32 +3,32 @@ import { PiShoppingCartThin } from "react-icons/pi";
 import Button from "./Button";
 
 const BestSelling = () => {
-  const [todayProduct, setTodayProduct] = useState(null); // State to hold cart data
+  const [thisMonth, setThisMonth] = useState(null); // State to hold cart data
   const [error, setError] = useState(null); // State to hold any errors
 
   useEffect(() => {
-    const fetchTodayProduct = async () => {
+    const fetchThisMonthProduct = async () => {
       try {
         const response = await fetch("https://dummyjson.com/carts/3");
         if (!response.ok) {
           throw new Error("Failed to fetch cart data");
         }
         const data = await response.json();
-        setTodayProduct(data);
+        setThisMonth(data);
         console.log(data);
       } catch (error) {
         setError(error.message);
       }
     };
 
-    fetchTodayProduct();
+    fetchThisMonthProduct();
   }, []);
 
   if (error) {
     return <div>Error: {error}</div>;
   }
 
-  if (!todayProduct) {
+  if (!thisMonth) {
     return <div>Loading...</div>;
   }
 
@@ -49,10 +49,10 @@ const BestSelling = () => {
       </div>
 
       <div
-        key={todayProduct.id}
+        key={thisMonth.id}
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center"
       >
-        {todayProduct.products.map((product) => (
+        {thisMonth.products.map((product) => (
           <Product key={product.id} product={product} />
         ))}
       </div>
