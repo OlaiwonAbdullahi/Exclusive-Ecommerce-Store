@@ -16,7 +16,7 @@ const HomePage = () => {
         <hr className=" border-t border-text1 w-5/6" />
       </div>
       <BestSelling />
-      <div className=" w-full flex justify-center md:h-96 h-48">
+      <div className=" w-full flex justify-center md:h-96 h-48 p-2">
         <img src={Categories} alt="" className=" md:w-5/6 w-full" />
       </div>
     </div>

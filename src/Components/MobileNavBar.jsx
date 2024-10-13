@@ -4,9 +4,11 @@ import TopHeader from "./TopHeader";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { GoSearch } from "react-icons/go";
 import { useState } from "react";
+import SearchBar from "./SearchBar";
 
 const MobileNavBar = () => {
   const [openMenu, setOpenMenu] = useState(false);
+  const [openSearch, setOpenSearch] = useState(false);
   return (
     <div className=" flex flex-col md:hidden w-full ">
       <TopHeader />
@@ -15,7 +17,13 @@ const MobileNavBar = () => {
           Exclusive Store
         </div>
         <div className=" flex gap-3">
-          <GoSearch className=" h-6 w-6" />
+          <button onClick={() => setOpenSearch(!openSearch)}>
+            {!openSearch ? (
+              <GoSearch className=" h-6 w-6" />
+            ) : (
+              <LiaTimesSolid className=" h-6 w-6" />
+            )}
+          </button>
 
           <CiHeart className=" h-6 w-6" />
           <PiShoppingCartThin className=" h-6 w-6" />
@@ -29,7 +37,7 @@ const MobileNavBar = () => {
           </button>
         </div>
       </div>
-
+      <div className=" flex justify-center">{openSearch && <SearchBar />}</div>
       {openMenu && <Nav />}
     </div>
   );
