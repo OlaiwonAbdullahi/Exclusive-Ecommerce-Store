@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import FlashSales from "./FlashSales";
 
 const TodayProduct = () => {
   const [todayProduct, setTodayProduct] = useState(null); // State to hold cart data
@@ -7,7 +8,7 @@ const TodayProduct = () => {
   useEffect(() => {
     const fetchTodayProduct = async () => {
       try {
-        const response = await fetch("https://dummyjson.com/carts/1");
+        const response = await fetch("https://dummyjson.com/carts/2");
         if (!response.ok) {
           throw new Error("Failed to fetch cart data");
         }
@@ -31,9 +32,12 @@ const TodayProduct = () => {
   }
 
   return (
-    <div>
-      <h1>Today's Products</h1>
-      <div key={todayProduct.id}>
+    <div className=" p-8 flex flex-col gap-8">
+      <h1 className=" text-secondary2 text-xl border-l-[20px] rounded-sm border-l-secondary2 p-1">
+        Today&apos;s
+      </h1>
+      <FlashSales />
+      <div key={todayProduct.id} className=" flex justify-around">
         {todayProduct.products.map((product) => (
           <Product key={product.id} product={product} />
         ))}
@@ -54,9 +58,15 @@ function Product({ product }) {
           className="w-40 h-auto"
         />
       </div>
-      <p>
-        {product.title} - ${product.price}
-      </p>
+      <p>{product.title}</p>
+      <div className=" flex gap-3">
+        <span className="text-secondary2">
+          ${product.price.toLocaleString()}
+        </span>{" "}
+        <span className="text-text1 line-through">
+          ${product.discountedTotal}
+        </span>
+      </div>
     </div>
   );
 }
