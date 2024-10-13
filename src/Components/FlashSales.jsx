@@ -35,7 +35,7 @@ const FlashSales = () => {
 
   // Countdown Display
   return (
-    <div className=" flex p-2 w-1/3 justify-between items-center">
+    <div className=" flex p-2 md:w-1/3  w-full justify-between items-center">
       <div className="">
         <h2 className="text-3xl font-semibold text-text2">Flash Sales</h2>
       </div>
