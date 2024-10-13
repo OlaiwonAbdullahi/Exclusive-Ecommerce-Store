@@ -1,8 +1,8 @@
 import English from "../assets/english.svg";
 const TopHeader = () => {
   return (
-    <div className=" w-full px-2 md:px-0">
-      <div className=" flex bg-button justify-around  text-text p-2 font-thin text-sm">
+    <div className=" ">
+      <div className=" flex bg-button justify-around  text-text p-2 font-thin text-sm w-full px-2 md:px-0">
         <div className=""></div>
         <div className="">
           Summer Sale For All Swim Suits and Free Express Delivery -- OFF 50%{" "}
