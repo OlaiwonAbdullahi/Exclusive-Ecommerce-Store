@@ -10,6 +10,7 @@ const HomePage = () => {
       <MobileNavBar />
       <Hero />
       <TodayProduct />
+      <hr className=" border border-text1" />
     </div>
   );
 };

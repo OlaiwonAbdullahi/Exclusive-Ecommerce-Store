@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import FlashSales from "./FlashSales";
 import { PiShoppingCartThin } from "react-icons/pi";
+import Button from "./Button";
 
 const TodayProduct = () => {
   const [todayProduct, setTodayProduct] = useState(null); // State to hold cart data
@@ -45,6 +46,9 @@ const TodayProduct = () => {
         {todayProduct.products.map((product) => (
           <Product key={product.id} product={product} />
         ))}
+      </div>
+      <div className=" flex justify-center">
+        <Button width={170}>View All Product</Button>
       </div>
     </div>
   );
