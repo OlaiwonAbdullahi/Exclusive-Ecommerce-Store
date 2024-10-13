@@ -34,7 +34,7 @@ const TodayProduct = () => {
 
   return (
     <div className="p-8 flex flex-col gap-8">
-      <h1 className="text-secondary2 text-xl border-l-[20px] rounded-sm border-l-secondary2 p-1">
+      <h1 className="text-secondary2 text-xl border-l-[20px] rounded-md border-l-secondary2 p-1">
         Today&apos;s
       </h1>
       <FlashSales />
