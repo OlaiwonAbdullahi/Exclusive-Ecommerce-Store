@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import FlashSales from "./FlashSales";
+import { PiShoppingCartThin } from "react-icons/pi";
 
 const TodayProduct = () => {
   const [todayProduct, setTodayProduct] = useState(null); // State to hold cart data
@@ -60,6 +61,9 @@ function Product({ product }) {
 
         <div className="absolute top-2 left-2 bg-secondary2 text-text text-xs w-10 rounded-sm flex items-center justify-center">
           -{product.discountPercentage}%
+        </div>
+        <div className="absolute top-2 right-2 bg-text rounded-full">
+          <PiShoppingCartThin className=" h-6 w-6" />
         </div>
       </div>
 

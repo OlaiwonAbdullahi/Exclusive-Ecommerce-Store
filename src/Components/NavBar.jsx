@@ -1,7 +1,7 @@
-import { CiHeart } from "react-icons/ci";
+import { CiHeart, CiUser } from "react-icons/ci";
 import SearchBar from "./SearchBar";
 import TopHeader from "./TopHeader";
-import { IoCartOutline } from "react-icons/io5";
+import { PiShoppingCartThin } from "react-icons/pi";
 
 const NavBar = () => {
   return (
@@ -22,7 +22,8 @@ const NavBar = () => {
         <div className=" flex gap-5 items-center">
           <SearchBar />
           <CiHeart className=" h-6 w-6" />
-          <IoCartOutline className=" h-6 w-6 font-thin" />
+          <PiShoppingCartThin className=" h-6 w-6" />
+          <CiUser className=" h-6 w-6" />
         </div>
       </div>
     </div>
