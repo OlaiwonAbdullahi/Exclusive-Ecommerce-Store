@@ -1,3 +1,4 @@
+import BestSelling from "../Components/BestSelling";
 import Hero from "../Components/Hero";
 import MobileNavBar from "../Components/MobileNavBar";
 import NavBar from "../Components/NavBar";
@@ -10,7 +11,10 @@ const HomePage = () => {
       <MobileNavBar />
       <Hero />
       <TodayProduct />
-      <hr className=" border border-text1" />
+      <div className=" flex justify-center">
+        <hr className=" border-t border-text1 w-5/6" />
+      </div>
+      <BestSelling />
     </div>
   );
 };
