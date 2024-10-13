@@ -5,7 +5,7 @@ import { PiShoppingCartThin } from "react-icons/pi";
 
 const NavBar = () => {
   return (
-    <div className=" flex flex-col">
+    <div className=" md:flex flex-col hidden w-full">
       <TopHeader />
       <div className=" flex justify-around p-3 items-center border-b border-b-text1/20">
         <div className=" font-semibold text-button text-2xl">

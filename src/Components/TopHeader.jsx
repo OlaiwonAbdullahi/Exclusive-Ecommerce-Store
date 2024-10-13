@@ -1,7 +1,7 @@
 import English from "../assets/english.svg";
 const TopHeader = () => {
   return (
-    <div>
+    <div className=" w-full">
       <div className=" flex bg-button justify-around  text-text p-2 font-thin text-sm">
         <div className=""></div>
         <div className="">
