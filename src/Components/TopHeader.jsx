@@ -8,7 +8,7 @@ const TopHeader = () => {
           Summer Sale For All Swim Suits and Free Express Delivery -- OFF 50%{" "}
           <span className="font-medium underline">Shop Now</span>
         </div>
-        <div className=" flex gap-2">
+        <div className=" flex gap-2 mr-3">
           {" "}
           English <img src={English} alt="" className=" h-5 w-5" />{" "}
         </div>
