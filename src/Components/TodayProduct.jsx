@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import FlashSales from "./FlashSales";
 import { PiShoppingCartThin } from "react-icons/pi";
 import Button from "./Button";
+import StarRating from "./StarRating";
 
 const TodayProduct = () => {
   const [todayProduct, setTodayProduct] = useState(null); // State to hold cart data
@@ -86,6 +87,7 @@ function Product({ product }) {
           ${product.discountedTotal}
         </span>
       </div>
+      <StarRating />
     </div>
   );
 }

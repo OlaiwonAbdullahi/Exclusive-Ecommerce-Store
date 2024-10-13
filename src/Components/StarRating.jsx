@@ -4,7 +4,7 @@ import { FaStarHalfStroke } from "react-icons/fa6";
 
 const StarRating = () => {
   return (
-    <div>
+    <div className=" flex flex-row text-yellow-400">
       <TbStarFilled />
       <TbStarFilled />
       <TbStarFilled />
