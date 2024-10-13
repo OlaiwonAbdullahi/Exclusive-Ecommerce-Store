@@ -38,7 +38,10 @@ const TodayProduct = () => {
         Today&apos;s
       </h1>
       <FlashSales />
-      <div key={todayProduct.id} className="flex justify-around">
+      <div
+        key={todayProduct.id}
+        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center"
+      >
         {todayProduct.products.map((product) => (
           <Product key={product.id} product={product} />
         ))}
@@ -51,19 +54,22 @@ export default TodayProduct;
 
 function Product({ product }) {
   return (
-    <div className="relative product bg-white rounded-lg  p-4 flex flex-col">
+    <div className="relative product bg-white rounded-lg shadow-md p-4 flex flex-col w-full max-w-[250px] mx-auto">
       <div className="relative bg-secondary rounded-md">
         <img
           src={product.thumbnail || "placeholder-image-url.jpg"} // Show thumbnail or placeholder if not available
           alt={product.title}
-          className="w-40 h-auto"
+          className="w-full h-auto object-cover" // Make the image fully responsive
         />
 
+        {/* Discount Percentage Badge */}
         <div className="absolute top-2 left-2 bg-secondary2 text-text text-xs w-10 rounded-sm flex items-center justify-center">
           -{product.discountPercentage}%
         </div>
-        <div className="absolute top-2 right-2 bg-text rounded-full">
-          <PiShoppingCartThin className=" h-6 w-6" />
+
+        {/* Shopping Cart Icon */}
+        <div className="absolute top-2 right-2 bg-text rounded-full p-1">
+          <PiShoppingCartThin className="h-6 w-6 text-secondary2" />
         </div>
       </div>
 
