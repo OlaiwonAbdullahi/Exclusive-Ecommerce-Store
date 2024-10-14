@@ -15,7 +15,7 @@ const MobileNavBar = () => {
     <div className="sticky z-20 top-0 flex flex-col md:hidden w-full">
       <TopHeader />
       <div className=" bg-white  flex justify-between px-7 p-3 items-center border-b border-b-text1/20">
-        <div className="font-semibold text-button text-2xl">
+        <div className="font-semibold text-button text-xl whitespace-nowrap ">
           Exclusive Store
         </div>
         <div className="flex gap-3">
