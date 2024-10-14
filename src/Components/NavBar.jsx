@@ -23,11 +23,42 @@ const NavBar = () => {
           <SearchBar />
           <CiHeart className=" h-6 w-6" />
           <PiShoppingCartThin className=" h-6 w-6" />
+
           <CiUser className=" h-6 w-6" />
         </div>
       </div>
+      <UserDropDown />
     </div>
   );
 };
 
 export default NavBar;
+
+function UserDropDown() {
+  return (
+    <div className="fixed inset-0 z-50 flex  justify-center bg-black bg-opacity-50 pt-10">
+      <div className=" relative bg-white w-1/2 max-w-md rounded-lg p-6 shadow-lg max-h-[40%] overflow-y-auto items-start flex flex-col justify-center text-left">
+        <div className=" flex">
+          <CiUser className=" h-6 w-6" />
+          <span>Manage My Account</span>
+        </div>
+        <div className=" flex">
+          <CiUser className=" h-6 w-6" />
+          <span>My Order</span>
+        </div>
+        <div className=" flex">
+          <CiUser className=" h-6 w-6" />
+          <span>My Cancellations</span>
+        </div>
+        <div className=" flex">
+          <CiUser className=" h-6 w-6" />
+          <span>My Reviews</span>
+        </div>
+        <div className=" flex">
+          <CiUser className=" h-6 w-6" />
+          <span>Logout</span>
+        </div>
+      </div>
+    </div>
+  );
+}
