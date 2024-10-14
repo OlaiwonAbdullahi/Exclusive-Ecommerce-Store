@@ -37,7 +37,7 @@ const FlashSales = () => {
   return (
     <div className=" flex p-2 md:w-1/3  w-full justify-between items-center">
       <div className="">
-        <h2 className="text-3xl font-semibold text-text2 whitespace-nowrap">
+        <h2 className="text-2xl md:text-3xl font-semibold text-text2 whitespace-nowrap">
           Flash Sales
         </h2>
       </div>
