@@ -13,7 +13,7 @@ const HomePage = () => {
       <Hero />
       <TodayProduct />
       <div className=" flex justify-center">
-        <hr className=" border-t border-text1 w-5/6" />
+        <hr className=" border-t border-text1/30 w-5/6" />
       </div>
       <BestSelling />
       <div className=" w-full flex justify-center md:h-96 h-48 p-2">
