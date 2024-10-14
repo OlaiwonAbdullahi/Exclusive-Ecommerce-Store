@@ -1,5 +1,6 @@
 import AllProduct from "../Components/AllProduct";
 import BestSelling from "../Components/BestSelling";
+import Feature from "../Components/Feature";
 import Footer from "../Components/Footer";
 import Hero from "../Components/Hero";
 import MobileNavBar from "../Components/MobileNavBar";
@@ -24,6 +25,7 @@ const HomePage = () => {
       </div>
       <AllProduct />
       <NewArival />
+      <Feature />
       <Footer />
     </div>
   );
