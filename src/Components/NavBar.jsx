@@ -26,7 +26,9 @@ const NavBar = () => {
             <Link to="/about">
               <li>About</li>
             </Link>
-            <li>Sign Up</li>
+            <Link to="/signup">
+              <li>Sign Up</li>
+            </Link>
           </ul>
         </div>
         <div className=" flex gap-5 items-center">
