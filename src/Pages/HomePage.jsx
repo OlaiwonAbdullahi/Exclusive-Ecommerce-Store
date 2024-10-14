@@ -1,3 +1,4 @@
+import AllProduct from "../Components/AllProduct";
 import BestSelling from "../Components/BestSelling";
 import Hero from "../Components/Hero";
 import MobileNavBar from "../Components/MobileNavBar";
@@ -19,6 +20,7 @@ const HomePage = () => {
       <div className=" w-full flex justify-center md:h-96 h-48 p-2">
         <img src={Categories} alt="" className=" md:w-5/6 w-full" />
       </div>
+      <AllProduct />
     </div>
   );
 };
