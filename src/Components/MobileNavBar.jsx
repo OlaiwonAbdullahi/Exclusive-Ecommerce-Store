@@ -73,7 +73,7 @@ function Nav({ closeMenu }) {
 function UserDropDown({ closeMenu }) {
   return (
     <div className="fixed inset-0 z-50 flex  justify-end  pt-20 pr-16">
-      <div className=" relative bg-gray-400 text-text bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50  w-1/2 max-w-md rounded-lg p-6 shadow-lg max-h-[40%] overflow-y-auto items-start gap-2 flex flex-col justify-center text-left">
+      <div className=" relative bg-gray-400 text-text bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50  w-3/4 max-w-md rounded-lg p-6 shadow-lg max-h-[50%] overflow-y-auto items-start gap-2 flex flex-col justify-center text-left">
         <button
           className="absolute top-4 right-4 pb-2 text-xl"
           onClick={closeMenu}
