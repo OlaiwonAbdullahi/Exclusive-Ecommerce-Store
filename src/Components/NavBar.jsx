@@ -17,9 +17,15 @@ const NavBar = () => {
         </div>
         <div className=" ">
           <ul className="flex gap-9 font-light">
-            <li className="border-b border-b-text1/20">Home</li>
-            <li>Contact</li>
-            <li>About</li>
+            <Link to="/">
+              <li className="border-b border-b-text1/20">Home</li>
+            </Link>
+            <Link to="/contact">
+              <li>Contact</li>
+            </Link>
+            <Link to="/about">
+              <li>About</li>
+            </Link>
             <li>Sign Up</li>
           </ul>
         </div>
