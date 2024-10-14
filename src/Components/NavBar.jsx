@@ -1,9 +1,12 @@
-import { CiHeart, CiUser } from "react-icons/ci";
+import { CiHeart, CiLogout, CiStar, CiUser } from "react-icons/ci";
 import SearchBar from "./SearchBar";
 import TopHeader from "./TopHeader";
-import { PiShoppingCartThin } from "react-icons/pi";
+import { PiShoppingBagThin, PiShoppingCartThin } from "react-icons/pi";
+import { useState } from "react";
+import { LiaTimesCircle, LiaTimesSolid } from "react-icons/lia";
 
 const NavBar = () => {
+  const [openUserMenu, setOpenUserMenu] = useState(false);
   return (
     <div className=" md:flex flex-col hidden w-full">
       <TopHeader />
@@ -23,39 +26,51 @@ const NavBar = () => {
           <SearchBar />
           <CiHeart className=" h-6 w-6" />
           <PiShoppingCartThin className=" h-6 w-6" />
-
-          <CiUser className=" h-6 w-6" />
+          <button
+            className=" hover:text-secondary2"
+            onClick={() => setOpenUserMenu(!openUserMenu)}
+          >
+            <CiUser className=" h-6 w-6" />
+          </button>
         </div>
       </div>
-      <UserDropDown />
+      {openUserMenu && (
+        <UserDropDown closeMenu={() => setOpenUserMenu(false)} />
+      )}
     </div>
   );
 };
 
 export default NavBar;
 
-function UserDropDown() {
+function UserDropDown({ closeMenu }) {
   return (
-    <div className="fixed inset-0 z-50 flex  justify-center bg-black bg-opacity-50 pt-10">
-      <div className=" relative bg-white w-1/2 max-w-md rounded-lg p-6 shadow-lg max-h-[40%] overflow-y-auto items-start flex flex-col justify-center text-left">
-        <div className=" flex">
+    <div className="fixed inset-0 z-50 flex  justify-end  pt-20 pr-28">
+      <div className=" relative bg-gray-400 bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50  w-1/5 max-w-md rounded-lg p-6 shadow-lg max-h-[40%] overflow-y-auto items-start gap-2 flex flex-col justify-center text-left">
+        <button
+          className="absolute top-4 right-4 pb-2 text-xl"
+          onClick={closeMenu}
+        >
+          <LiaTimesSolid className="h-6 w-6" />
+        </button>
+        <div className=" flex mt-4 gap-3">
           <CiUser className=" h-6 w-6" />
           <span>Manage My Account</span>
         </div>
-        <div className=" flex">
-          <CiUser className=" h-6 w-6" />
+        <div className=" flex gap-3">
+          <PiShoppingBagThin className=" h-6 w-6" />
           <span>My Order</span>
         </div>
-        <div className=" flex">
-          <CiUser className=" h-6 w-6" />
+        <div className=" flex gap-3">
+          <LiaTimesCircle className=" h-6 w-6" />
           <span>My Cancellations</span>
         </div>
-        <div className=" flex">
-          <CiUser className=" h-6 w-6" />
+        <div className=" flex gap-3">
+          <CiStar className=" h-6 w-6" />
           <span>My Reviews</span>
         </div>
-        <div className=" flex">
-          <CiUser className=" h-6 w-6" />
+        <div className=" flex gap-3">
+          <CiLogout className=" h-6 w-6" />
           <span>Logout</span>
         </div>
       </div>
