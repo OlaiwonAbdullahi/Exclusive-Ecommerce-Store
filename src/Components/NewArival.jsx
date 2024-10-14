@@ -1,3 +1,5 @@
+import PictureGrid from "./PictureGrid";
+
 const NewArival = () => {
   return (
     <div className="p-8 flex flex-col gap-8 mt-4">
@@ -9,6 +11,7 @@ const NewArival = () => {
           <span className="text-4xl font-semibold text-text2">New Arrival</span>
         </div>
       </div>
+      <PictureGrid />
     </div>
   );
 };
