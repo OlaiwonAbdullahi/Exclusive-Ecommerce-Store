@@ -1,8 +1,10 @@
 import AllProduct from "../Components/AllProduct";
 import BestSelling from "../Components/BestSelling";
+import Footer from "../Components/Footer";
 import Hero from "../Components/Hero";
 import MobileNavBar from "../Components/MobileNavBar";
 import NavBar from "../Components/NavBar";
+import NewArival from "../Components/NewArival";
 import TodayProduct from "../Components/TodayProduct";
 import Categories from "../assets/cartegory.png";
 
@@ -21,6 +23,8 @@ const HomePage = () => {
         <img src={Categories} alt="" className=" md:w-5/6 w-full" />
       </div>
       <AllProduct />
+      <NewArival />
+      <Footer />
     </div>
   );
 };
