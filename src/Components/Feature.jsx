@@ -3,7 +3,7 @@ import Service from "../assets/Services.png";
 const Feature = () => {
   return (
     <div className=" flex justify-center">
-      <div className="flex justify-around text-center w-2/3">
+      <div className="flex justify-around text-center w-2/3 md:flex-row flex-col gap-4">
         <div className="flex justify-center items-center flex-col">
           <img src={Service} alt="" className="h-16 w-16" />
           <h2 className="font-semibold mt-2">FREE AND FAST DELIVERY</h2>
