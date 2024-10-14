@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { CiHeart, CiLogout, CiMenuFries, CiStar, CiUser } from "react-icons/ci";
 import { LiaTimesCircle, LiaTimesSolid } from "react-icons/lia";
-import TopHeader from "./TopHeader";
+//import TopHeader from "./TopHeader";
 import { PiShoppingBagThin, PiShoppingCartThin } from "react-icons/pi";
 import { GoSearch } from "react-icons/go";
 import SearchBar from "./SearchBar";
@@ -13,7 +13,7 @@ const MobileNavBar = () => {
 
   return (
     <div className="sticky z-20 top-0 flex flex-col md:hidden w-full">
-      <TopHeader />
+      {/*<TopHeader />*/}
       <div className=" bg-white  flex justify-between px-3 p-3 items-center border-b border-b-text1/20">
         <div className="font-semibold text-button text-xl whitespace-nowrap ">
           Exclusive Store
