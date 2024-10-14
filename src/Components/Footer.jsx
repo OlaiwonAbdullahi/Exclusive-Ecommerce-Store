@@ -54,8 +54,10 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr className="  border-t border-t-text1" />
-      <div className="">&copy;</div>
+      <hr className="  border-t border-t-text1 " />
+      <div className="text-center bg-text2 text-text1">
+        &copy; {new Date().getFullYear()} All Right Reserved
+      </div>
     </div>
   );
 };
