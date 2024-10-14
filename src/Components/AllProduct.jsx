@@ -45,7 +45,7 @@ const AllProduct = () => {
             Explore Our Products
           </span>
         </div>
-        <div className=" flex gap-4">
+        <div className=" flex md:gap-4 gap-2">
           <button className=" pb-10">
             <CiSliderHorizontal className=" md:h-10 md:w-10 h-5 w-5  text-text2" />
           </button>
