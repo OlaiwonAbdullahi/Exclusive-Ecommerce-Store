@@ -49,7 +49,7 @@ export default MobileNavBar;
 function Nav({ closeMenu }) {
   return (
     <div className="fixed inset-0 z-50 flex justify-center bg-black bg-opacity-50 pt-10">
-      <div className="relative bg-white w-3/4 max-w-md rounded-lg p-6 shadow-lg max-h-[35%] overflow-y-auto items-center flex justify-center text-center">
+      <div className="relative bg-white w-3/4 max-w-md rounded-lg p-6 shadow-lg max-h-[40%] overflow-y-auto items-center flex justify-center text-center">
         <button className="absolute top-4 right-4 text-xl" onClick={closeMenu}>
           <LiaTimesSolid className="h-6 w-6" />
         </button>
