@@ -4,6 +4,7 @@ import TopHeader from "./TopHeader";
 import { PiShoppingBagThin, PiShoppingCartThin } from "react-icons/pi";
 import { useState } from "react";
 import { LiaTimesCircle, LiaTimesSolid } from "react-icons/lia";
+import { Link } from "react-router-dom";
 
 const NavBar = () => {
   const [openUserMenu, setOpenUserMenu] = useState(false);
@@ -25,7 +26,9 @@ const NavBar = () => {
         <div className=" flex gap-5 items-center">
           <SearchBar />
           <CiHeart className=" h-6 w-6 hover:text-secondary2 cursor-pointer" />
-          <PiShoppingCartThin className=" h-6 w-6 hover:text-secondary2 cursor-pointer" />
+          <Link to="/cart">
+            <PiShoppingCartThin className=" h-6 w-6 hover:text-secondary2 cursor-pointer" />
+          </Link>
           <button
             className=" hover:text-secondary2"
             onClick={() => setOpenUserMenu(!openUserMenu)}
