@@ -23,7 +23,7 @@ export default function HeroSwipper() {
         }}
         navigation={true}
         modules={[Autoplay, Pagination]}
-        className="w-full h-80"
+        className="w-full md:h-80 h-40"
       >
         <SwiperSlide className="flex items-center justify-center h-full rounded-lg">
           <img src={Heroimg} alt="" className=" h-full rounded-md" />
