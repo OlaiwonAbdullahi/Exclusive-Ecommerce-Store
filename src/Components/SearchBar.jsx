@@ -8,7 +8,7 @@ const SearchBar = () => {
         placeholder=" What are you looking for?"
         className=" w-36 bg-secondary text-text2 placeholder:text-text2 text-sm focus:outline-none placeholder:font-light"
       />
-      <CiSearch className=" h-5 w-5" />
+      <CiSearch className=" h-5 w-5 hover:text-secondary2 cursor-pointer" />
     </div>
   );
 };

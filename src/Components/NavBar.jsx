@@ -24,8 +24,8 @@ const NavBar = () => {
         </div>
         <div className=" flex gap-5 items-center">
           <SearchBar />
-          <CiHeart className=" h-6 w-6 hover:text-secondary2" />
-          <PiShoppingCartThin className=" h-6 w-6 hover:text-secondary2" />
+          <CiHeart className=" h-6 w-6 hover:text-secondary2 cursor-pointer" />
+          <PiShoppingCartThin className=" h-6 w-6 hover:text-secondary2 cursor-pointer" />
           <button
             className=" hover:text-secondary2"
             onClick={() => setOpenUserMenu(!openUserMenu)}
