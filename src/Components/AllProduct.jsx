@@ -47,9 +47,9 @@ const AllProduct = () => {
         </div>
         <div className=" flex gap-4">
           <button className=" pb-10">
-            <CiSliderHorizontal className=" h-10 w-10  text-text2" />
+            <CiSliderHorizontal className=" md:h-10 md:w-10 h-5 w-5  text-text2" />
           </button>
-          <Button width={100}>Go to Cart </Button>
+          <Button width={80}>Go to Cart </Button>
         </div>
       </div>
 
