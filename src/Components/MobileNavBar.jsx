@@ -5,6 +5,7 @@ import { LiaTimesCircle, LiaTimesSolid } from "react-icons/lia";
 import { PiShoppingBagThin, PiShoppingCartThin } from "react-icons/pi";
 import { GoSearch } from "react-icons/go";
 import SearchBar from "./SearchBar";
+import { Link } from "react-router-dom";
 
 const MobileNavBar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -60,7 +61,9 @@ function Nav({ closeMenu }) {
           <LiaTimesSolid className="h-6 w-6" />
         </button>
         <ul className="flex flex-col gap-4 text-lg font-light">
-          <li className="hover:text-gray-500 cursor-pointer">Home</li>
+          <Link to="/">
+            <li className="hover:text-gray-500 cursor-pointer">Home</li>
+          </Link>
           <li className="hover:text-gray-500 cursor-pointer">Contact</li>
           <li className="hover:text-gray-500 cursor-pointer">About</li>
           <li className="hover:text-gray-500 cursor-pointer">Sign Up</li>
