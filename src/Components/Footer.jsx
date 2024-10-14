@@ -11,7 +11,7 @@ const Footer = () => {
           <br />
           <span className="text-sm">Get 10% off your first order</span>
           <div className=" flex justify-center m-2 md:justify-start">
-            <div className=" flex gap-2  border-text border p-1 px-2 rounded-md w-1/3 md:w-full justify-between">
+            <div className=" flex gap-2  border-text border p-1 px-2 rounded-md w-5/6 md:w-full justify-between">
               <input
                 type="text"
                 placeholder="Enter your email"
