@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { PiShoppingCartThin } from "react-icons/pi";
 import Button from "./Button";
 import StarRating from "./StarRating";
+import { CiSliderHorizontal } from "react-icons/ci";
 
 const AllProduct = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -34,7 +35,7 @@ const AllProduct = () => {
   }
 
   return (
-    <div className="p-8 flex flex-col gap-8 mt-3">
+    <div className="p-8 flex flex-col gap-8 mt-4">
       <div className="flex justify-between">
         <div className="flex flex-col gap-3">
           <h1 className="text-secondary2 text-xl border-l-[20px] rounded-md border-l-secondary2 p-1">
@@ -43,6 +44,12 @@ const AllProduct = () => {
           <span className="text-4xl font-semibold text-text2">
             Explore Our Products
           </span>
+        </div>
+        <div className=" flex gap-4">
+          <button className=" pb-10">
+            <CiSliderHorizontal className=" h-10 w-10  text-text2" />
+          </button>
+          <Button width={100}>Go to Cart </Button>
         </div>
       </div>
 
