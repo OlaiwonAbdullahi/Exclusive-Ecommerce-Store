@@ -41,7 +41,7 @@ const AllProduct = () => {
           <h1 className="text-secondary2 text-xl border-l-[20px] rounded-md border-l-secondary2 p-1">
             Our Products
           </h1>
-          <span className="text-4xl font-semibold text-text2">
+          <span className="text-2xl md:text-4xl font-semibold text-text2">
             Explore Our Products
           </span>
         </div>
