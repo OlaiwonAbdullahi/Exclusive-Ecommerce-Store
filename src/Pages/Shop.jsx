@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { PiShoppingCartThin } from "react-icons/pi";
 import { CiShop, CiSliderHorizontal } from "react-icons/ci";
+
 import Button from "../Components/Button";
 import StarRating from "../Components/StarRating";
 import Categories from "../Components/Categories";
@@ -12,31 +13,27 @@ const Shop = () => {
 
   useEffect(() => {
     const fetchAllProducts = async () => {
-      if (categories) {
-        try {
-          const response = await fetch(
-            `https://dummyjson.com/products/category/${categories}`
-          );
-          if (!response.ok) {
-            throw new Error("Failed to fetch product data");
-          }
-          const data = await response.json();
-          setShop(data.products);
-        } catch (error) {
-          setError(error.message);
+      try {
+        const response = await fetch(
+          `https://dummyjson.com/products${
+            categories ? `/category/${categories}` : ""
+          }`
+        );
+        if (!response.ok) {
+          throw new Error("Failed to fetch product data");
         }
+        const data = await response.json();
+        setShop(data.products);
+      } catch (error) {
+        setError(error.message);
       }
     };
 
     fetchAllProducts();
-  }, [categories]);
+  }, [categories]); // Fetch products whenever the categories change
 
   if (error) {
     return <div>Error: {error}</div>;
-  }
-
-  if (!shop.length && categories) {
-    return <div>No products found in this category.</div>;
   }
 
   if (!shop.length) {
@@ -64,7 +61,7 @@ const Shop = () => {
       </div>
 
       <div className="flex justify-center">
-        <Categories setCategories={setCategories} />
+        <Categories setCategories={setCategories} categories={categories} />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center">
