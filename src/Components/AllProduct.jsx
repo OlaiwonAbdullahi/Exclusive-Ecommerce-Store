@@ -12,13 +12,12 @@ const AllProduct = () => {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const response = await fetch("https://dummyjson.com/carts");
+        const response = await fetch("https://dummyjson.com/products");
         if (!response.ok) {
-          throw new Error("Failed to fetch cart data");
+          throw new Error("Failed to fetch product data");
         }
         const data = await response.json();
-        const products = data.carts.flatMap((cart) => cart.products);
-        setAllProducts(products);
+        setAllProducts(data.products); // Corrected this part
       } catch (error) {
         setError(error.message);
       }
@@ -47,16 +46,18 @@ const AllProduct = () => {
           </span>
         </div>
 
-        <div className=" flex md:gap-4 gap-2">
-          <button className=" pb-10">
-            <CiSliderHorizontal className=" md:h-10 md:w-10 h-5 w-5  text-text2" />
+        <div className="flex md:gap-4 gap-2">
+          <button className="pb-10">
+            <CiSliderHorizontal className="md:h-10 md:w-10 h-5 w-5 text-text2" />
           </button>
-          <Button width={80}>Go to Cart </Button>
+          <Button width={80}>Go to Cart</Button>
         </div>
       </div>
+
       <div>
         <Categories />
       </div>
+
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center">
         {allProducts.map((product) => (
           <Product key={product.id} product={product} />
@@ -91,9 +92,12 @@ function Product({ product }) {
       <div className="flex gap-3 mt-1">
         <span className="text-secondary2 font-semibold">
           ${product.price.toLocaleString()}
-        </span>{" "}
+        </span>
         <span className="text-text1 line-through">
-          ${product.discountedTotal}
+          $
+          {((product.price * (100 + product.discountPercentage)) / 100).toFixed(
+            2
+          )}
         </span>
       </div>
       <StarRating />
