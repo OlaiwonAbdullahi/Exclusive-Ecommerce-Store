@@ -3,6 +3,7 @@ import { PiShoppingCartThin } from "react-icons/pi";
 import Button from "./Button";
 import StarRating from "./StarRating";
 import { CiSliderHorizontal } from "react-icons/ci";
+import Categories from "./Categories";
 
 const AllProduct = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -45,6 +46,7 @@ const AllProduct = () => {
             Explore Our Products
           </span>
         </div>
+
         <div className=" flex md:gap-4 gap-2">
           <button className=" pb-10">
             <CiSliderHorizontal className=" md:h-10 md:w-10 h-5 w-5  text-text2" />
@@ -52,7 +54,9 @@ const AllProduct = () => {
           <Button width={80}>Go to Cart </Button>
         </div>
       </div>
-
+      <div>
+        <Categories />
+      </div>
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center">
         {allProducts.map((product) => (
           <Product key={product.id} product={product} />

@@ -6,7 +6,7 @@ import Hero from "../Components/Hero";
 import NewArival from "../Components/NewArival";
 import TodayProduct from "../Components/TodayProduct";
 import Cart from "../Components/Cart";
-import Categories from "../Components/Categories";
+//import Categories from "../Components/Categories";
 import Categoriesimg from "../assets/cartegory.png";
 
 const HomePage = () => {
@@ -21,7 +21,7 @@ const HomePage = () => {
       <div className=" w-full flex justify-center md:h-96 h-48 p-2">
         <img src={Categoriesimg} alt="" className=" md:w-5/6 w-full" />
       </div>
-      <Categories />
+
       <AllProduct />
       <NewArival />
       <Feature />
