@@ -16,7 +16,7 @@ const BestSelling = () => {
         }
         const data = await response.json();
         setThisMonth(data);
-        console.log(data);
+        //console.log(data);
       } catch (error) {
         setError(error.message);
       }

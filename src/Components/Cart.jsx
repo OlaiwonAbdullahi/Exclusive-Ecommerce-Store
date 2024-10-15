@@ -10,12 +10,14 @@ const Cart = () => {
     // Define the API endpoint
     const fetchCartData = async () => {
       try {
-        const response = await fetch("https://dummyjson.com/carts/1"); // Example URL
+        const response = await fetch(
+          "https://dummyjson.com/products/category-list"
+        ); // Example URL
         if (!response.ok) {
           throw new Error("Failed to fetch cart data");
         }
         const data = await response.json(); // Parse the JSON response
-        setCartData(data); // Set the fetched cart data to state
+        console.log(data); // Set the fetched cart data to state
         setLoading(false); // Turn off loading
       } catch (error) {
         setError(error.message); // Handle errors
@@ -31,9 +33,9 @@ const Cart = () => {
     return <div>Loading cart data...</div>;
   }
 
-  ` if (error) {
+  if (error) {
     return <div>Error: {error}</div>;
-  }`;
+  }
 
   // Step 4: Display cart data once it's fetched
   return (

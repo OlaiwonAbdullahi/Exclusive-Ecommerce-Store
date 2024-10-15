@@ -5,6 +5,7 @@ import Footer from "../Components/Footer";
 import Hero from "../Components/Hero";
 import NewArival from "../Components/NewArival";
 import TodayProduct from "../Components/TodayProduct";
+import Cart from "../Components/Cart";
 import Categories from "../assets/cartegory.png";
 
 const HomePage = () => {
@@ -23,6 +24,7 @@ const HomePage = () => {
       <NewArival />
       <Feature />
       <Footer />
+      <Cart />
     </div>
   );
 };
