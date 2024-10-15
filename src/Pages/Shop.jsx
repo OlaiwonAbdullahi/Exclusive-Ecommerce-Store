@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { PiShoppingCartThin } from "react-icons/pi";
-import { CiSliderHorizontal } from "react-icons/ci";
+import { CiShop, CiSliderHorizontal } from "react-icons/ci";
 
 import Button from "../Components/Button";
 import StarRating from "../Components/StarRating";
@@ -9,11 +9,14 @@ import Categories from "../Components/Categories";
 const Shop = () => {
   const [shop, setShop] = useState([]);
   const [error, setError] = useState(null);
+  const [categories, setCategories] = useState(null);
 
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const response = await fetch("https://dummyjson.com/products");
+        const response = await fetch(
+          `https://dummyjson.com/products/category/${categories}`
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch product data");
         }
@@ -39,8 +42,8 @@ const Shop = () => {
     <div className="p-8 flex flex-col gap-8 mt-4">
       <div className="flex justify-between">
         <div className="flex flex-col gap-3">
-          <h1 className="text-secondary2 text-xl border-l-[20px] rounded-md border-l-secondary2 p-1">
-            Our Products
+          <h1 className="text-secondary2 text-xl border-l-[20px] rounded-md border-l-secondary2 p-1 flex items-center">
+            <CiShop /> Shop
           </h1>
           <span className="text-2xl md:text-4xl whitespace-nowrap font-semibold text-text2">
             Explore Our Products
@@ -56,7 +59,7 @@ const Shop = () => {
       </div>
 
       <div className=" flex justify-center">
-        <Categories />
+        <Categories setCategories={setCategories} categories={categories} />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center">
