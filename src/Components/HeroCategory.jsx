@@ -3,7 +3,7 @@ import Button from "./Button";
 
 const HeroCategory = () => {
   return (
-    <div className=" flex overflow-auto w-full">
+    <div className=" flex overflow-x-auto w-full scrollbar-hide">
       <ul className=" flex md:flex-col flex-row gap-1 whitespace-nowrap">
         <li className=" flex p-1 gap-3 items-center text-lg font-medium text-gray-700 hover:bg-gray-100 bg-gray-100 md:bg-white rounded-lg transition-all duration-300">
           Beauty
