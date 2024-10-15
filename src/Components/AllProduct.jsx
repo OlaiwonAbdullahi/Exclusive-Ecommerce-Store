@@ -54,7 +54,7 @@ const AllProduct = () => {
         </div>
       </div>
 
-      <div>
+      <div className=" flex justify-center">
         <Categories />
       </div>
 

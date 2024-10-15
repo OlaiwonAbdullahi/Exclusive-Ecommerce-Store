@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 const NavBar = () => {
   const [openUserMenu, setOpenUserMenu] = useState(false);
   return (
-    <div className=" md:flex flex-col hidden w-full">
+    <div className=" md:flex flex-col hidden w-full sticky top-0 bg-white z-20">
       <TopHeader />
       <div className=" flex justify-around p-3 items-center border-b border-b-text1/20">
         <div className=" font-semibold text-button text-2xl">
