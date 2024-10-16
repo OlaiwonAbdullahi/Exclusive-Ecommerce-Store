@@ -5,8 +5,8 @@ import Signupimg from "../assets/Signup.svg";
 const Signup = () => {
   return (
     <div className="flex flex-col md:flex-row py-2 items-center h-screen">
-      <div className="hidden md:block">
-        <img src={Signupimg} alt="Signup" className="w-3/4 h-[700px]" />
+      <div className="hidden md:block ">
+        <img src={Signupimg} alt="Signup" className="w-full h-[700px]" />
       </div>
 
       {/* Form Section */}
@@ -48,9 +48,7 @@ const Signup = () => {
         </form>
         <p className="mt-2 text-center">
           Already have an account?{" "}
-          <span className="underline text-secondary cursor-pointer">
-            Log in
-          </span>
+          <span className="underline  cursor-pointer">Log in</span>
         </p>
       </div>
     </div>
