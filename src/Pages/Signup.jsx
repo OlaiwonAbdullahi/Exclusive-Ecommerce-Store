@@ -1,6 +1,7 @@
 import Button from "../Components/Button";
 import { FcGoogle } from "react-icons/fc";
 import Signupimg from "../assets/Signup.svg";
+import { Link } from "react-router-dom";
 
 const Signup = () => {
   return (
@@ -48,7 +49,9 @@ const Signup = () => {
         </form>
         <p className="mt-2 text-center">
           Already have an account?{" "}
-          <span className="underline  cursor-pointer">Log in</span>
+          <span className="underline  cursor-pointer">
+            <Link to="/login">Log in</Link>
+          </span>
         </p>
       </div>
     </div>
