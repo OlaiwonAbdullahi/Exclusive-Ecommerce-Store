@@ -1,5 +1,11 @@
+import Path from "../Components/Path";
+
 const About = () => {
-  return <div>About</div>;
+  return (
+    <div>
+      <Path />
+    </div>
+  );
 };
 
 export default About;
