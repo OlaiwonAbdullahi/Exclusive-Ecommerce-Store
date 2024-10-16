@@ -1,12 +1,9 @@
 import AllProduct from "../Components/AllProduct";
 import BestSelling from "../Components/BestSelling";
 import Feature from "../Components/Feature";
-//import Footer from "../Components/Footer";
 import Hero from "../Components/Hero";
 import NewArival from "../Components/NewArival";
 import TodayProduct from "../Components/TodayProduct";
-import Cart from "../Components/Cart";
-//import Categories from "../Components/Categories";
 import Categoriesimg from "../assets/cartegory.png";
 
 const HomePage = () => {
@@ -25,8 +22,6 @@ const HomePage = () => {
       <AllProduct />
       <NewArival />
       <Feature />
-
-      <Cart />
     </div>
   );
 };
