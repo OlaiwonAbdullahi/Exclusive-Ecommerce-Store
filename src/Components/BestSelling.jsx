@@ -10,12 +10,12 @@ const BestSelling = () => {
   useEffect(() => {
     const fetchThisMonthProduct = async () => {
       try {
-        const response = await fetch("https://dummyjson.com/carts/3");
+        const response = await fetch("https://dummyjson.com/products/3");
         if (!response.ok) {
           throw new Error("Failed to fetch cart data");
         }
         const data = await response.json();
-        setThisMonth(data);
+        setThisMonth(data.products);
         console.log(data);
       } catch (error) {
         setError(error.message);
