@@ -1,3 +1,4 @@
+import Button from "../Components/Button";
 const ContactForm = () => {
   return (
     <div>
@@ -28,6 +29,9 @@ const ContactForm = () => {
             placeholder=" Your Message"
             className=" bg-text1/10 p-2 focus:outline-none text-sm rounded text-text1 w-full h-36"
           />
+        </div>
+        <div className=" flex justify-end">
+          <Button width={120}>Send Message</Button>
         </div>
       </form>
     </div>
