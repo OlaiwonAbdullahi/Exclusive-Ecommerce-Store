@@ -1,11 +1,12 @@
 import Button from "../Components/Button";
 import { FcGoogle } from "react-icons/fc";
+import Signupimg from "../assets/Signup.svg";
 
 const Signup = () => {
   return (
-    <div>
+    <div className=" flex py-2">
       <div className="">
-        <img src="" alt="" />
+        <img src={Signupimg} alt="" className=" w-3/4" />
       </div>
       <div className="">
         <form action="">
@@ -16,7 +17,7 @@ const Signup = () => {
           <input type="text" placeholder="Email or Phone Number" />
           <input type="password" placeholder="Password" />
           <Button>Create Account</Button>
-          <button>
+          <button className=" rounded bg-white border border-text2">
             <FcGoogle />
             Sign Up with Google
           </button>
