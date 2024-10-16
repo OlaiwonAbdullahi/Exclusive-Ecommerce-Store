@@ -41,7 +41,7 @@ const Signup = () => {
 
           <div className="flex flex-col gap-4 mt-2">
             <Button>Create Account</Button>
-            <button className="text-lg items-center justify-center gap-2 flex p-2 rounded bg-white border border-text2">
+            <button className=" hover:bg-text1/10 text-lg items-center justify-center gap-2 flex p-2 rounded bg-white border border-text2">
               <FcGoogle className="h-6 w-6" />
               Sign Up with Google
             </button>
