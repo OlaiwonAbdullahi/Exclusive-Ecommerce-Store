@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 
 const LogIn = () => {
   return (
-    <div className="flex flex-col md:flex-row py-2 items-center h-screen md:h-full mb-2">
-      <div className="hidden md:block ">
+    <div className="flex flex-col md:flex-row py-2 items-center h-screen justify-center md:h-full mb-2">
+      {/* Image Section for larger screens */}
+      <div className="hidden md:block">
         <img src={Signupimg} alt="Signup" className="w-full h-[700px]" />
       </div>
 
-      <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
+      {/* Form Section */}
+      <div className="w-full md:w-1/2 flex flex-col items-center justify-center h-full">
         <form
           action=""
           className="flex flex-col gap-4 justify-center md:w-2/3 w-full px-4 md:px-8 lg:px-16"
@@ -35,12 +37,14 @@ const LogIn = () => {
 
           <div className="flex justify-between items-center mt-2">
             <Button width={150}>Log In</Button>
-            <span className=" text-secondary2">Forget Password?</span>
+            <span className="text-secondary2 cursor-pointer">
+              Forgot Password?
+            </span>
           </div>
         </form>
         <p className="mt-2 text-center">
-          Don&apos;t have an account?
-          <span className="underline  cursor-pointer">
+          Don&apos;t have an account?{" "}
+          <span className="underline cursor-pointer">
             <Link to="/signup">Sign Up</Link>
           </span>
         </p>
