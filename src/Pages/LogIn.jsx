@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const LogIn = () => {
   return (
-    <div className="flex flex-col md:flex-row py-2 items-center  mb-2">
+    <div className="flex flex-col md:flex-row py-2 items-center h-screen md:h-full mb-2">
       <div className="hidden md:block ">
         <img src={Signupimg} alt="Signup" className="w-full h-[700px]" />
       </div>
