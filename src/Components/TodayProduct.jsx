@@ -33,7 +33,11 @@ const TodayProduct = () => {
   }
 
   if (!todayProduct) {
-    return <div>Loading...</div>;
+    return (
+      <div className=" h-screen items-center justify-center flex">
+        <div className="w-10 h-10 border-4 border-gray-200 border-t-secondary2 rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
   return (
@@ -86,7 +90,10 @@ function Product({ product }) {
           ${product.price.toLocaleString()}
         </span>{" "}
         <span className="text-text1 line-through">
-          ${product.discountedTotal}
+          $
+          {((product.price * (100 + product.discountPercentage)) / 100).toFixed(
+            2
+          )}
         </span>
       </div>
       <StarRating />
