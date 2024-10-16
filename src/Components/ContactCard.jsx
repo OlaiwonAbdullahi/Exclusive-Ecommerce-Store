@@ -28,7 +28,7 @@ const ContactCard = () => {
           </div>
         </div>
       </div>
-      <div className="">
+      <div className=" basis-2/3 gap-2 border border-text1 rounded-md shadow-md p-2">
         <ContactForm />
       </div>
     </div>
