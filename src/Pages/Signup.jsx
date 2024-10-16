@@ -13,7 +13,7 @@ const Signup = () => {
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center">
         <form
           action=""
-          className="flex flex-col gap-4 justify-center w-2/3 px-4 md:px-8 lg:px-16"
+          className="flex flex-col gap-4 justify-center md:w-2/3 w-full px-4 md:px-8 lg:px-16"
         >
           <div className="text-left">
             <h2 className="text-3xl font-medium">Create an account</h2>
