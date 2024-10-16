@@ -1,9 +1,11 @@
+import OurStory from "../Components/OurStory";
 import Path from "../Components/Path";
 
 const About = () => {
   return (
     <div>
-      <Path />
+      <Path>About</Path>
+      <OurStory />
     </div>
   );
 };

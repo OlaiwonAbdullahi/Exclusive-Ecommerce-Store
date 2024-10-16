@@ -1,5 +1,11 @@
+import Path from "../Components/Path";
+
 const Contact = () => {
-  return <div>Contact</div>;
+  return (
+    <div>
+      <Path>Contact</Path>
+    </div>
+  );
 };
 
 export default Contact;
