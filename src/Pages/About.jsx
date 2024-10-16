@@ -12,7 +12,10 @@ const About = () => {
       <div className=" flex justify-center">
         <Stats />
       </div>
-      <Team />
+      <div className=" flex justify-center">
+        <Team />
+      </div>
+
       <Feature />
     </div>
   );
