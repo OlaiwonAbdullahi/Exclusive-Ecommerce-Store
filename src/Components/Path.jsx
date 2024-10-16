@@ -1,7 +1,7 @@
 const Path = ({ children }) => {
   return (
     <div
-      className="text-sm flex whitespace-nowrap"
+      className="text-sm flex whitespace-nowrap p-4"
       role="navigation"
       aria-label="Breadcrumb"
     >
