@@ -11,7 +11,9 @@ const TodayProduct = () => {
   useEffect(() => {
     const fetchTodayProduct = async () => {
       try {
-        const response = await fetch("https://dummyjson.com/carts/2");
+        const response = await fetch(
+          "https://dummyjson.com/products/category/smartphones?limit=4&skip=2"
+        );
         if (!response.ok) {
           throw new Error("Failed to fetch cart data");
         }
