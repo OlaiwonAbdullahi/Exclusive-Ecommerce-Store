@@ -7,6 +7,7 @@ import Contact from "./Pages/Contact";
 import Signup from "./Pages/Signup";
 import Shop from "./Pages/Shop";
 import LogIn from "./Pages/LogIn";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/login" element={<LogIn />} />
         </Routes>
+        <Footer />
       </Router>
     </div>
   );

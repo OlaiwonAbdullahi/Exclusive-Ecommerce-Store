@@ -3,7 +3,7 @@ import Qrcode from "../assets/Qrcode.png";
 import PlayStore from "../assets/playsore.png";
 const Footer = () => {
   return (
-    <div className="">
+    <div className=" mt-4">
       <div className=" bg-black text-text flex justify-between p-4 mt-6 font-light text-sm gap-3 md:flex-row md:gap-0 flex-col">
         <div className=" text-center md:text-left">
           <h2 className=" text-2xl">Exclusive Store</h2>

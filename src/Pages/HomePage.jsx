@@ -1,7 +1,7 @@
 import AllProduct from "../Components/AllProduct";
 import BestSelling from "../Components/BestSelling";
 import Feature from "../Components/Feature";
-import Footer from "../Components/Footer";
+//import Footer from "../Components/Footer";
 import Hero from "../Components/Hero";
 import NewArival from "../Components/NewArival";
 import TodayProduct from "../Components/TodayProduct";
@@ -25,7 +25,7 @@ const HomePage = () => {
       <AllProduct />
       <NewArival />
       <Feature />
-      <Footer />
+
       <Cart />
     </div>
   );
