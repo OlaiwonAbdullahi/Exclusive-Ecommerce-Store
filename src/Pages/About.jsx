@@ -12,7 +12,7 @@ const About = () => {
       <div className=" flex justify-center">
         <Stats />
       </div>
-      <div className=" flex justify-center">
+      <div className=" flex justify-center items-center mx-auto">
         <Team />
       </div>
 
