@@ -11,7 +11,7 @@ import Footer from "./Components/Footer";
 
 const App = () => {
   return (
-    <div className=" font-Afacad">
+    <div className=" font-Afacad ">
       <Router>
         <NavBar />
         <MobileNavBar />

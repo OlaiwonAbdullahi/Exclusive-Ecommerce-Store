@@ -4,19 +4,20 @@ import Button from "./Button";
 import StarRating from "./StarRating";
 
 const BestSelling = () => {
-  const [thisMonth, setThisMonth] = useState(null); // State to hold cart data
+  const [thisMonth, setThisMonth] = useState([]); // Initialize as an empty array
   const [error, setError] = useState(null); // State to hold any errors
 
   useEffect(() => {
     const fetchThisMonthProduct = async () => {
       try {
-        const response = await fetch("https://dummyjson.com/products/3");
+        const response = await fetch(
+          "https://dummyjson.com/products?limit=4&skip=1"
+        );
         if (!response.ok) {
-          throw new Error("Failed to fetch cart data");
+          throw new Error("Failed to fetch product data");
         }
         const data = await response.json();
-        setThisMonth(data.products);
-        console.log(data);
+        setThisMonth(data.products); // This now holds the array of products
       } catch (error) {
         setError(error.message);
       }
@@ -29,31 +30,29 @@ const BestSelling = () => {
     return <div>Error: {error}</div>;
   }
 
-  if (!thisMonth) {
-    return <div>Loading...</div>;
+  if (!thisMonth || thisMonth.length === 0) {
+    return <div>Loading...</div>; // Display loading until the products are fetched
   }
 
   return (
     <div className="p-8 flex flex-col gap-8">
-      <div className=" flex justify-between">
-        <div className=" flex flex-col gap-3">
+      <div className="flex justify-between">
+        <div className="flex flex-col gap-3">
           <h1 className="text-secondary2 text-xl border-l-[20px] rounded-md border-l-secondary2 p-1">
             This Month
           </h1>
-          <span className=" text-2xl md:text-4xl whitespace-nowrap font-semibold text-text2 ">
+          <span className="text-2xl md:text-4xl whitespace-nowrap font-semibold text-text2">
             Best Selling Products
           </span>
         </div>
-        <div className="">
+        <div>
           <Button width={100}>View All</Button>
         </div>
       </div>
 
-      <div
-        key={thisMonth.id}
-        className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center"
-      >
-        {thisMonth.products.map((product) => (
+      {/* Render products */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center">
+        {thisMonth.map((product) => (
           <Product key={product.id} product={product} />
         ))}
       </div>
@@ -87,7 +86,7 @@ function Product({ product }) {
       <div className="flex gap-3 mt-1">
         <span className="text-secondary2 font-semibold">
           ${product.price.toLocaleString()}
-        </span>{" "}
+        </span>
         <span className="text-text1 line-through">
           ${product.discountedTotal}
         </span>

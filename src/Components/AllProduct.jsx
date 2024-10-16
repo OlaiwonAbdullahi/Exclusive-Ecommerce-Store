@@ -4,6 +4,7 @@ import Button from "./Button";
 import StarRating from "./StarRating";
 import { CiSliderHorizontal } from "react-icons/ci";
 import Categories from "./Categories";
+import { Link } from "react-router-dom";
 
 const AllProduct = () => {
   const [allProducts, setAllProducts] = useState([]);
@@ -12,7 +13,7 @@ const AllProduct = () => {
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
-        const response = await fetch("https://dummyjson.com/products");
+        const response = await fetch("https://dummyjson.com/products?limit=15");
         if (!response.ok) {
           throw new Error("Failed to fetch product data");
         }
@@ -54,15 +55,17 @@ const AllProduct = () => {
         </div>
       </div>
 
-      <div className=" flex justify-center">
-        <Categories />
-      </div>
-
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center">
         {allProducts.map((product) => (
           <Product key={product.id} product={product} />
         ))}
       </div>
+      <div className=" flex justify-center">
+        <Link to="/shop">
+          <Button width={200}>Go to Shop</Button>
+        </Link>
+      </div>
+      <hr className="border-t border-t-text1/15" />
     </div>
   );
 };
