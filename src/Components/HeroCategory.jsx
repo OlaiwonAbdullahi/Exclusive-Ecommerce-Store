@@ -1,5 +1,6 @@
 import { MdKeyboardArrowRight } from "react-icons/md";
 import Button from "./Button";
+import { Link } from "react-router-dom";
 
 const HeroCategory = () => {
   return (
@@ -34,7 +35,9 @@ const HeroCategory = () => {
         <li className="flex p-1 items-center text-lg font-medium text-gray-700 hover:bg-gray-100 rounded-lg transition-all duration-300 bg-gray-100 md:bg-white">
           Vehicles
         </li>
-        <Button width={150}>View All Categories</Button>
+        <Link to="/shop">
+          <Button width={150}>View All Categories</Button>
+        </Link>
       </ul>
     </div>
   );
