@@ -15,9 +15,9 @@ const Footer = () => {
               <input
                 type="text"
                 placeholder="Enter your email"
-                className=" bg-text2 placeholder:text-text placeholder:font-extralight"
+                className=" bg-text2 placeholder:text-text placeholder:font-extralight focus:outline-none"
               />
-              <VscSend className=" h-6 w-6" />
+              <VscSend className=" h-6 w-6 cursor-pointer" />
             </div>
           </div>
         </div>

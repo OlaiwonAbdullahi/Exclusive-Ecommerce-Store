@@ -18,19 +18,21 @@ const NavBar = () => {
         <div className=" ">
           <ul className="flex gap-9 font-light">
             <Link to="/">
-              <li className="border-b border-b-text1/20">Home</li>
+              <li className="border-b border-b-text1/20 hover:text-secondary2">
+                Home
+              </li>
             </Link>
             <Link to="/contact">
-              <li>Contact</li>
+              <li className=" hover:text-secondary2">Contact</li>
             </Link>
             <Link to="/about">
-              <li>About</li>
+              <li className=" hover:text-secondary2">About</li>
             </Link>
             <Link to="/signup">
-              <li>Sign Up</li>
+              <li className=" hover:text-secondary2">Sign Up</li>
             </Link>
             <Link to="/shop">
-              <li>Shop</li>
+              <li className=" hover:text-secondary2">Shop</li>
             </Link>
           </ul>
         </div>

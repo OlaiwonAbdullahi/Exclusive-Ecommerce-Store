@@ -22,16 +22,16 @@ const MobileNavBar = () => {
         <div className="flex gap-3">
           <button onClick={() => setOpenSearch(!openSearch)}>
             {!openSearch ? (
-              <GoSearch className="h-6 w-6" />
+              <GoSearch className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
             ) : (
               <LiaTimesSolid className="h-6 w-6" />
             )}
           </button>
 
-          <CiHeart className="h-6 w-6" />
-          <PiShoppingCartThin className="h-6 w-6" />
+          <CiHeart className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
+          <PiShoppingCartThin className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
           <button className="" onClick={() => setOpenUserMenu(!openUserMenu)}>
-            <CiUser className="h-6 w-6" />
+            <CiUser className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
           </button>
           <button onClick={() => setOpenMenu(!openMenu)}>
             {!openMenu ? (
@@ -62,11 +62,17 @@ function Nav({ closeMenu }) {
         </button>
         <ul className="flex flex-col gap-4 text-lg font-light">
           <Link to="/">
-            <li className="hover:text-gray-500 cursor-pointer">Home</li>
+            <li className="hover:text-secondary2 cursor-pointer">Home</li>
           </Link>
-          <li className="hover:text-gray-500 cursor-pointer">Contact</li>
-          <li className="hover:text-gray-500 cursor-pointer">About</li>
-          <li className="hover:text-gray-500 cursor-pointer">Sign Up</li>
+          <Link to="/contact">
+            <li className="hover:text-secondary2 cursor-pointer">Contact</li>
+          </Link>
+          <Link to="/about">
+            <li className="hover:text-secondary2 cursor-pointer">About</li>
+          </Link>
+          <Link to="/signup">
+            <li className="hover:text-secondary2 cursor-pointer">Sign Up</li>
+          </Link>
         </ul>
       </div>
     </div>
