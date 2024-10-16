@@ -73,6 +73,9 @@ function Nav({ closeMenu }) {
           <Link to="/signup">
             <li className="hover:text-secondary2 cursor-pointer">Sign Up</li>
           </Link>
+          <Link to="/shop">
+            <li className="hover:text-secondary2 cursor-pointer">Shop</li>
+          </Link>
         </ul>
       </div>
     </div>
