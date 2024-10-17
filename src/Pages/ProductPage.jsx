@@ -13,7 +13,7 @@ const ProductPage = () => {
           <div className=" flex text-sm p-1 items-center justify-between w-1/3">
             <StarRating />
             <span>|</span>
-            <span className=" text-button1">In Stock</span>
+            <span className=" text-button1 ">In Stock</span>
           </div>
           <div className="">
             Brand: <span className="text-secondary2 uppercase">XIAOMI</span>
@@ -53,11 +53,14 @@ const ProductPage = () => {
               <CiHeart className=" h-6 w-6" />
             </div>
           </div>
-          <div className="">
-            <div className="">
+          <div className=" flex justify-between w-1/2">
+            <div className=" flex flex-col text-secondary2">
               <span>1 Year Warranty</span>
               <span> 7 days return Policy</span>
               <span>Ships in 2 Weeks</span>
+            </div>
+            <div className="">
+              <img src="https://placehold.co/100" alt="" />
             </div>
           </div>
         </div>
