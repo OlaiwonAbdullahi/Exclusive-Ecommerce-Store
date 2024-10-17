@@ -52,7 +52,7 @@ const ProductPage = () => {
             <div className="">
               <Button width={120}>Buy Now</Button>
             </div>
-            <div className="border border-text2 rounded p-1">
+            <div className="border border-text2 rounded p-1 bg-white hover:bg-secondary2 hover:text-text hover:border-secondary2 border-text2 ">
               <CiHeart className=" h-6 w-6" />
             </div>
           </div>
