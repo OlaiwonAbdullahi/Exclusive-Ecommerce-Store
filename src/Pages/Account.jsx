@@ -98,7 +98,7 @@ const Account = () => {
                 />
                 <input
                   type="password"
-                  id="NewPassword"
+                  id="ConfirmNewPassword"
                   placeholder=" Confirm New Password"
                   className=" bg-text1/10 p-2 focus:outline-none text-sm rounded text-text1"
                 />

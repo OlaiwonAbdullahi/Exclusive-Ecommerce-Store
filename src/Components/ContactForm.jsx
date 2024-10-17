@@ -7,19 +7,19 @@ const ContactForm = () => {
           <input
             type="text"
             placeholder="Your Name"
-            className=" bg-text1/10 w-1/3 p-2 focus:outline-none text-sm rounded text-text1"
+            className=" bg-text1/10 md:w-1/3 w-full p-2 focus:outline-none text-sm rounded text-text1"
           />
           <input
             type="email"
             required
             placeholder="Your Email"
-            className=" bg-text1/10 p-2 w-1/3 focus:outline-none text-sm rounded text-text1"
+            className=" bg-text1/10 p-2 md:w-1/3 w-full focus:outline-none text-sm rounded text-text1"
           />
           <input
             type="tel"
             required
             placeholder="Phone Number"
-            className=" bg-text1/10 p-2 w-1/3 focus:outline-none text-sm rounded text-text1"
+            className=" bg-text1/10 p-2 md:w-1/3 w-full focus:outline-none text-sm rounded text-text1"
           />
         </div>
         <div className="">

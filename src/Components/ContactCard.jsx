@@ -26,7 +26,7 @@ const ContactCard = () => {
               <CiMail className="h-7 w-7 bg-secondary2 text-white rounded-full p-1" />
               <span>Write to us</span>
             </div>
-            <div className="text-gray-600">
+            <div className="text-gray-600 flex flex-col">
               <p>Fill out our form and we will contact you within 24 hours.</p>
               <span>Emails: customer@exclusive.com</span>
               <span>Support: support@exclusive.com</span>
