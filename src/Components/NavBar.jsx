@@ -69,10 +69,12 @@ function UserDropDown({ closeMenu }) {
         >
           <LiaTimesSolid className="h-6 w-6" />
         </button>
-        <div className=" flex mt-4 gap-3">
-          <CiUser className=" h-6 w-6" />
-          <span>Manage My Account</span>
-        </div>
+        <Link to="/account">
+          <div className=" flex mt-4 gap-3">
+            <CiUser className=" h-6 w-6" />
+            <span>Manage My Account</span>
+          </div>
+        </Link>
         <div className=" flex gap-3">
           <PiShoppingBagThin className=" h-6 w-6" />
           <span>My Order</span>
