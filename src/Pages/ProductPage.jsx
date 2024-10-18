@@ -16,7 +16,7 @@ const ProductPage = () => {
             className="rounded w-full h-auto"
           />
         </div>
-        <div className="flex justify-between gap-3 w-full">
+        <div className="flex justify-between mx-auto items-center gap-3 md:w-full w-11/12 pr-2 ">
           <img
             src="https://placehold.co/200x100"
             alt=""
