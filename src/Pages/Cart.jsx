@@ -5,7 +5,7 @@ const Cart = () => {
     <div>
       <Path>Cart</Path>
       <div className="">
-        <div className="">
+        <div className=" text-lg">
           <span>Product</span>
           <span>Price</span>
           <span>Quantity</span>
