@@ -29,7 +29,6 @@ const App = () => {
           <Route path="/account" element={<Account />} />
           <Route path="/product/:id" element={<ProductPage />} />
         </Routes>
-
         <Footer />
       </Router>
     </div>

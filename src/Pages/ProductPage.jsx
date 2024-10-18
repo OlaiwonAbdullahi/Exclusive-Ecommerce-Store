@@ -1,60 +1,106 @@
+import { useParams } from "react-router-dom";
 import StarRating from "../Components/StarRating";
 import Button from "../Components/Button";
 import { CiHeart } from "react-icons/ci";
 import { GoPlus } from "react-icons/go";
 import { FiMinus } from "react-icons/fi";
+import { useEffect, useState } from "react";
 
 const ProductPage = () => {
+  const [quantity, setQuantity] = useState(1);
+  const [product, setProduct] = useState(null);
+  const [error, setError] = useState(null);
+
+  // Get product ID from the URL using useParams()
+  const { id } = useParams();
+
+  const handleIncrement = () => {
+    setQuantity((prevQuantity) => prevQuantity + 1);
+  };
+
+  const handleDecrement = () => {
+    if (quantity > 1) {
+      setQuantity((prevQuantity) => prevQuantity - 1);
+    }
+  };
+
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const response = await fetch(`https://dummyjson.com/products/${id}`);
+        if (!response.ok) {
+          throw new Error("Failed to fetch product data");
+        }
+        const data = await response.json();
+        setProduct(data);
+        console.log(data);
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+
+    if (id) {
+      fetchProduct();
+    }
+  }, [id]);
+
+  if (error) {
+    return <div>Error: {error}</div>;
+  }
+
+  if (!product) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <div className="flex flex-col md:flex-row justify-center p-4">
       {/* Left side: Product images */}
       <div className="md:basis-2/3 p-3 flex flex-col gap-2 justify-center mx-auto w-full md:w-1/2">
-        <div className="w-full">
+        <div className="w-full border border-text1/10 shadow rounded flex justify-center">
           <img
-            src="https://placehold.co/620x300"
-            alt=""
-            className="rounded w-full h-auto"
+            src={product.thumbnail || "https://placehold.co/620x300"}
+            alt={product.title || "Product Image"}
+            className="rounded w-96 h-96"
           />
         </div>
-        <div className="flex justify-between mx-auto items-center gap-3 md:w-full w-11/12 pr-2 ">
-          <img
-            src="https://placehold.co/200x100"
-            alt=""
-            className="rounded w-1/3 h-auto"
-          />
-          <img
-            src="https://placehold.co/200x100"
-            alt=""
-            className="rounded w-1/3 h-auto"
-          />
-          <img
-            src="https://placehold.co/200x100"
-            alt=""
-            className="rounded w-1/3 h-auto"
-          />
+        <div className="flex justify-around mx-auto items-center gap-3 md:w-full w-11/12 pr-2 ">
+          {product.images.slice(0, 3).map((image, index) => (
+            <img
+              key={index}
+              src={image || "https://placehold.co/200x100"}
+              alt={`Product Image ${index + 1}`}
+              className="rounded w-24 h-24"
+            />
+          ))}
         </div>
       </div>
 
       {/* Right side: Product details */}
-      <div className="flex flex-col p-5 w-full md:w-1/2 gap-2 justify-center mx-auto">
+      <div className="flex flex-col p-5 w-full md:w-1/2 gap-2  mx-auto">
         <div className="md:w-3/4 w-full">
           <h2 className="text-2xl font-semibold whitespace-nowrap">
-            Havic HV G-92 GamePad
+            {product.title || "Product Title"}
           </h2>
           <div className="flex text-sm p-1 items-center gap-0.5 justify-between w-1/3">
-            <StarRating /> <span className="text-text1">(3.8)</span>
+            <StarRating />{" "}
+            <span className="text-text1">({product.rating})</span>
             <span>|</span>
-            <span className="text-button1 whitespace-nowrap">In Stock</span>
+            <span className="text-button1 whitespace-nowrap">
+              {product.availabilityStatus}
+            </span>
           </div>
           <div>
-            Brand: <span className="text-secondary2 uppercase">XIAOMI</span>
+            Brand:{" "}
+            <span className="text-secondary2 uppercase">
+              {product.brand || "Unknown Brand"}
+            </span>
           </div>
-          <span className="text-2xl font-medium">$192.00</span>
+          <span className="text-2xl font-medium">
+            ${product.price || "0.00"}
+          </span>
           <div className="md:w-3/4 w-full">
             <p className="text-center md:text-start">
-              PlayStation 5 Controller Skin High quality vinyl with air channel
-              adhesive for easy bubble free install & mess free removal Pressure
-              sensitive.
+              {product.description || "Product Description"}
             </p>
           </div>
         </div>
@@ -66,19 +112,26 @@ const ProductPage = () => {
         <div className="flex flex-col justify-center mx-auto p-2 w-full">
           <div className="flex p-2 items-center gap-4 w-full">
             <div className="flex">
-              <div className="border bg-white hover:bg-secondary2 hover:text-text hover:border-secondary2 border-text2 items-center flex justify-center text-xl rounded-l-sm p-1">
+              <button
+                onClick={handleDecrement}
+                className="border bg-white hover:bg-secondary2 hover:text-text hover:border-secondary2 border-text2 items-center flex justify-center text-xl rounded-l-sm p-1"
+              >
                 <FiMinus />
-              </div>
+              </button>
               <div>
                 <input
                   type="number"
-                  placeholder="2"
+                  value={quantity}
+                  disabled
                   className="placeholder:text-text2 text-2xl h-10 border-y border-y-text2 focus:outline-none p-1 w-16 text-center"
                 />
               </div>
-              <div className="border bg-white hover:bg-secondary2 hover:text-text hover:border-secondary2 border-text2 items-center p-1 flex justify-center text-xl rounded-r-sm">
+              <button
+                onClick={handleIncrement}
+                className="border bg-white hover:bg-secondary2 hover:text-text hover:border-secondary2 border-text2 items-center p-1 flex justify-center text-xl rounded-r-sm"
+              >
                 <GoPlus />
-              </div>
+              </button>
             </div>
 
             <div>
@@ -94,14 +147,14 @@ const ProductPage = () => {
           <div className="flex justify-between md:w-1/2 w-full items-center p-2 border border-text1/10 shadow rounded">
             <div className="flex flex-col text-secondary2">
               <span>1 Year Warranty</span>
-              <span>7 Days Return Policy</span>
-              <span>Ships in 2 Weeks</span>
+              <span>{product.returnPolicy}</span>
+              <span>{product.shippingInformation}</span>
             </div>
             <div>
               <img
-                src="https://placehold.co/100"
+                src={product?.meta?.qrCode}
                 alt="Product Image"
-                className="w-full h-auto"
+                className="w-full h-20"
               />
             </div>
           </div>
