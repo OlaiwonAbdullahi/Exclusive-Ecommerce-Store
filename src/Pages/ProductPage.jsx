@@ -6,14 +6,21 @@ import { FiMinus } from "react-icons/fi";
 const ProductPage = () => {
   return (
     <div className=" flex justify-center ">
-      <div className=" basis-2/3 p-3">
-        <img src="https://placehold.co/600x400" alt="" />
+      <div className=" basis-2/3 p-3  flex flex-col gap-2">
+        <div className="">
+          <img src="https://placehold.co/620x300" alt="" className=" rounded" />
+        </div>
+        <div className=" flex justify-between w-3/4 gap-3">
+          <img src="https://placehold.co/200x100" alt="" className=" rounded" />
+          <img src="https://placehold.co/200x100" alt="" className=" rounded" />
+          <img src="https://placehold.co/200x100" alt="" className=" rounded" />
+        </div>
       </div>
       <div className="  flex flex-col p-5 w-2/3 gap-2 ">
         <div className="w-3/4">
           <h2 className="text-2xl font-semibold ">Havic HV G-92 GamePad</h2>
-          <div className=" flex text-sm p-1 items-center justify-between w-1/3">
-            <StarRating />
+          <div className=" flex text-sm p-1 items-center gap-0.5 justify-between w-1/3">
+            <StarRating /> <span className=" text-text1">(3.8)</span>
             <span>|</span>
             <span className=" text-button1 ">In Stock</span>
           </div>
@@ -29,7 +36,7 @@ const ProductPage = () => {
             </p>
           </div>
         </div>
-        <div className=" w-2/3">
+        <div className=" w-3/5">
           <hr className="border-t border-t-text1/45" />
         </div>
         <div className="">
