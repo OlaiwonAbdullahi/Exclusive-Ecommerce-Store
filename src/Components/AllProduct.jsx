@@ -74,36 +74,39 @@ export default AllProduct;
 
 function Product({ product }) {
   return (
-    <div className="relative product bg-white rounded-lg shadow-md p-4 flex flex-col w-full max-w-[250px] mx-auto">
-      <div className="relative bg-secondary rounded-md">
-        <img
-          src={product.thumbnail || "placeholder-image-url.jpg"}
-          alt={product.title}
-          className="w-full h-auto object-cover"
-        />
+    <Link to={`/product/${product?.id}`}>
+      <div className="relative product bg-white rounded-lg shadow-md p-4 flex flex-col w-full max-w-[250px] mx-auto">
+        <div className="relative bg-secondary rounded-md">
+          <img
+            src={product.thumbnail || "placeholder-image-url.jpg"}
+            alt={product.title}
+            className="w-full h-auto object-cover"
+          />
 
-        <div className="absolute top-2 left-2 bg-secondary2 text-text text-xs w-10 rounded-sm flex items-center justify-center">
-          -{Math.round(product.discountPercentage)}%
+          <div className="absolute top-2 left-2 bg-secondary2 text-text text-xs w-10 rounded-sm flex items-center justify-center">
+            -{Math.round(product.discountPercentage)}%
+          </div>
+
+          <div className="absolute top-2 right-2 bg-text rounded-full p-1">
+            <PiShoppingCartThin className="h-6 w-6 text-secondary2" />
+          </div>
         </div>
 
-        <div className="absolute top-2 right-2 bg-text rounded-full p-1">
-          <PiShoppingCartThin className="h-6 w-6 text-secondary2" />
+        <p className="font-medium mt-2">{product.title}</p>
+        <div className="flex gap-3 mt-1">
+          <span className="text-secondary2 font-semibold">
+            ${product.price.toLocaleString()}
+          </span>
+          <span className="text-text1 line-through">
+            $
+            {(
+              (product.price * (100 + product.discountPercentage)) /
+              100
+            ).toFixed(2)}
+          </span>
         </div>
+        <StarRating />
       </div>
-
-      <p className="font-medium mt-2">{product.title}</p>
-      <div className="flex gap-3 mt-1">
-        <span className="text-secondary2 font-semibold">
-          ${product.price.toLocaleString()}
-        </span>
-        <span className="text-text1 line-through">
-          $
-          {((product.price * (100 + product.discountPercentage)) / 100).toFixed(
-            2
-          )}
-        </span>
-      </div>
-      <StarRating />
-    </div>
+    </Link>
   );
 }
