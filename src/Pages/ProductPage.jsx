@@ -163,7 +163,38 @@ const ProductPage = () => {
       </div>
       <div className="w-full flex justify-center">
         <div className=" p-2   border border-text1/10 shadow rounded w-3/4 ">
-          <h2>Our Customers Reviews</h2>
+          <h2 className=" text-secondary2 text-2xl font-medium">
+            Our Customers Reviews
+          </h2>
+          <div className=" flex justify-around flex-col md:flex-row">
+            <div className=" flex flex-col gap-1 p-2 w-44 border border-text1/10 shadow rounded  ">
+              <p className=" text-xl">{product?.reviews[0]?.comment}</p>
+              <span className="text-right italic">
+                {product?.reviews[0]?.reviewerName}
+              </span>
+              <span className="text-right text-sm">
+                {product?.reviews[0]?.date.slice(0, 10)}
+              </span>
+            </div>
+            <div className=" flex flex-col gap-1 p-2 w-44 border border-text1/10 shadow rounded  ">
+              <p className=" text-xl">{product?.reviews[1]?.comment}</p>
+              <span className="text-right italic">
+                {product?.reviews[1]?.reviewerName}
+              </span>
+              <span className="text-right text-sm">
+                {product?.reviews[1]?.date.slice(0, 10)}
+              </span>
+            </div>
+            <div className=" flex flex-col gap-1 p-2 w-44 border border-text1/10 shadow rounded  ">
+              <p className=" text-xl">{product?.reviews[2]?.comment}</p>
+              <span className="text-right italic">
+                {product?.reviews[2]?.reviewerName}
+              </span>
+              <span className="text-right text-sm">
+                {product?.reviews[2]?.date.slice(0, 10)}
+              </span>
+            </div>
+          </div>
         </div>
       </div>
     </>
