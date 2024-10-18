@@ -24,6 +24,14 @@ const Cart = () => {
     }));
   };
 
+  // Calculate cart total
+  const calculateTotal = () => {
+    return todayProduct.reduce((total, product) => {
+      const quantity = quantities[product.id] || 1;
+      return total + product.price * quantity;
+    }, 0);
+  };
+
   useEffect(() => {
     const fetchTodayProduct = async () => {
       try {
@@ -53,6 +61,8 @@ const Cart = () => {
   if (error) {
     return <div>Error: {error}</div>;
   }
+
+  const total = calculateTotal();
 
   return (
     <div>
@@ -116,34 +126,53 @@ const Cart = () => {
           )}
         </div>
       </div>
-      <div className=" flex justify-center">
-        <div className=" w-6/12 justify-between flex">
-          <button className=" border border-text2 rounded bg-white text-sm p-2 font-medium px-4 ">
-            Return to Shop
-          </button>
-          <button className=" border border-text2 rounded bg-white text-sm p-2 font-medium px-4 ">
-            Update Cart
-          </button>
-        </div>
-      </div>
-      <div className="">
-        <div className="">
-          <div className=" flex gap-4 items-center justify-center">
-            <input
-              type="text"
-              className="border border-text2 rounded bg-white text-sm p-2 font-medium px-4 placeholder:text-text2"
-              placeholder=" Coupon Code"
-            />
-            <Button width={120}> Apply Coupon</Button>
-          </div>
-          <div className="border border-text2 rounded bg-white">
-            <div className="">Cart Total</div>
-            <div className="">
-              <span>Subtotal:</span>
+
+      {/* Only show the cart totals if there are products */}
+      {todayProduct.length > 0 && (
+        <>
+          <div className="flex justify-center">
+            <div className="w-6/12 justify-between flex">
+              <button className="border border-text2 rounded bg-white text-sm p-2 font-medium px-4">
+                Return to Shop
+              </button>
+              <button className="border border-text2 rounded bg-white text-sm p-2 font-medium px-4">
+                Update Cart
+              </button>
             </div>
           </div>
-        </div>
-      </div>
+
+          <div className="p-5">
+            <div className="flex justify-around">
+              <div className="flex gap-4 items-center">
+                <input
+                  type="text"
+                  className="border border-text2 rounded bg-white text-sm p-2 font-medium px-4 placeholder:text-text2"
+                  placeholder="Coupon Code"
+                />
+                <Button width={120}>Apply Coupon</Button>
+              </div>
+
+              <div className="border border-text2 rounded bg-white p-3 flex flex-col gap-2">
+                <div className="">Cart Total</div>
+                <div className="flex justify-between border-b border-b-text1">
+                  <span>Subtotal:</span>
+                  <span>${total.toFixed(2)}</span>
+                </div>
+
+                <div className="flex justify-between border-b border-b-text1">
+                  <span>Shipping:</span>
+                  <span>Free</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Total:</span>
+                  <span>${total.toFixed(2)}</span>
+                </div>
+                <Button width={200}>Process to checkout</Button>
+              </div>
+            </div>
+          </div>
+        </>
+      )}
     </div>
   );
 };
