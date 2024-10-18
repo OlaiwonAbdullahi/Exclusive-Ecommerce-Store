@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Path from "../Components/Path";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
+import Button from "../Components/Button";
 
 const Cart = () => {
   const [todayProduct, setTodayProduct] = useState([]);
@@ -113,6 +114,16 @@ const Cart = () => {
           ) : (
             <p className="text-center p-4">No products in cart</p>
           )}
+        </div>
+      </div>
+      <div className=" flex justify-center">
+        <div className=" w-6/12 justify-between flex">
+          <button className=" border border-text2 rounded bg-white text-sm p-2 font-medium px-4 ">
+            Return to Shop
+          </button>
+          <button className=" border border-text2 rounded bg-white text-sm p-2 font-medium px-4 ">
+            Update Cart
+          </button>
         </div>
       </div>
     </div>
