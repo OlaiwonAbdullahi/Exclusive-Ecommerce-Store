@@ -5,6 +5,7 @@ import { CiHeart } from "react-icons/ci";
 import { GoPlus } from "react-icons/go";
 import { FiMinus } from "react-icons/fi";
 import { useEffect, useState } from "react";
+import Path from "../Components/Path";
 
 const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
@@ -54,6 +55,9 @@ const ProductPage = () => {
 
   return (
     <>
+      <Path>
+        {product.brand}&apos;s {product.title}
+      </Path>
       <div className="flex flex-col md:flex-row justify-center p-4">
         <div className="md:basis-2/3 p-3 flex flex-col gap-2 justify-center mx-auto w-full md:w-1/2">
           <div className="w-full border border-text1/10 shadow rounded flex justify-center">
