@@ -126,6 +126,24 @@ const Cart = () => {
           </button>
         </div>
       </div>
+      <div className="">
+        <div className="">
+          <div className=" flex gap-4 items-center justify-center">
+            <input
+              type="text"
+              className="border border-text2 rounded bg-white text-sm p-2 font-medium px-4 placeholder:text-text2"
+              placeholder=" Coupon Code"
+            />
+            <Button width={120}> Apply Coupon</Button>
+          </div>
+          <div className="border border-text2 rounded bg-white">
+            <div className="">Cart Total</div>
+            <div className="">
+              <span>Subtotal:</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
