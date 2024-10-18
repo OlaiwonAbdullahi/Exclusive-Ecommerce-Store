@@ -56,7 +56,8 @@ const ProductPage = () => {
   return (
     <>
       <Path>
-        {product.brand}&apos;s {product.title}
+        <span className=" capitalize">{product.category}</span>/ {product.brand}
+        &apos;s {product.title}
       </Path>
       <div className="flex flex-col md:flex-row justify-center p-4">
         <div className="md:basis-2/3 p-3 flex flex-col gap-2 justify-center mx-auto w-full md:w-1/2">
@@ -78,8 +79,6 @@ const ProductPage = () => {
             ))}
           </div>
         </div>
-
-        {/* Right side: Product details */}
         <div className="flex flex-col p-5 w-full md:w-1/2 gap-2  mx-auto">
           <div className="md:w-3/4 w-full">
             <h2 className="text-2xl font-semibold whitespace-nowrap">
