@@ -162,11 +162,11 @@ const ProductPage = () => {
         </div>
       </div>
       <div className="w-full flex justify-center">
-        <div className=" p-2   border border-text1/10 shadow rounded w-3/4 ">
+        <div className=" p-2   border border-text1/10 shadow rounded md:w-3/4 w-full ">
           <h2 className=" text-secondary2 text-2xl font-medium">
             Our Customers Reviews
           </h2>
-          <div className=" flex justify-around flex-col md:flex-row">
+          <div className=" flex justify-around flex-col md:flex-row gap-3 items-center">
             <div className=" flex flex-col gap-1 p-2 w-44 border border-text1/10 shadow rounded  ">
               <p className=" text-xl">{product?.reviews[0]?.comment}</p>
               <span className="text-right italic">
