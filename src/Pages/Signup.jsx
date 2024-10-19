@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../Components/firebase";
+import { toast } from "react-toastify";
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -14,14 +15,26 @@ const Signup = () => {
   const handleRegister = async (e) => {
     e.preventDefault();
     try {
+      // Create user with email and password
       await createUserWithEmailAndPassword(auth, email, password);
       const user = auth.currentUser;
       console.log(user);
-      console.log("user sucessfully LoggedIn");
+
+      console.log("User successfully registered");
+      toast.success(
+        "You've sucessfully Created an account on Exclusive Store Platform .Happy Shopping",
+        {
+          position: "top-center",
+        }
+      );
     } catch (error) {
       console.log(error);
+      toast.success(error.message, {
+        position: "buttom-center",
+      });
     }
   };
+
   return (
     <div className="flex flex-col md:flex-row py-2 h-screen items-center justify-center">
       {/* Image Section */}
