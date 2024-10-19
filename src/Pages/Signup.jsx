@@ -4,8 +4,9 @@ import Signupimg from "../assets/Signup.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { createUserWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../Components/firebase";
+import { auth, db } from "../Components/firebase"; // Import Firestore db
 import { toast } from "react-toastify";
+import { setDoc, doc } from "firebase/firestore"; // Import Firestore methods
 
 const Signup = () => {
   const [name, setName] = useState("");
@@ -20,17 +21,25 @@ const Signup = () => {
       const user = auth.currentUser;
       console.log(user);
 
-      console.log("User successfully registered");
+      // Save user data to Firestore
+      if (user) {
+        await setDoc(doc(db, "users", user.uid), {
+          name: name,
+          email: user.email,
+        });
+      }
+
+      console.log("User successfully registered and saved to Firestore");
       toast.success(
-        "You've sucessfully Created an account on Exclusive Store Platform .Happy Shopping",
+        "You've successfully created an account on Exclusive Store Platform. Happy Shopping!",
         {
           position: "top-center",
         }
       );
     } catch (error) {
-      console.log(error);
-      toast.success(error.message, {
-        position: "buttom-center",
+      console.log(error.message);
+      toast.error(error.message, {
+        position: "top-center",
       });
     }
   };

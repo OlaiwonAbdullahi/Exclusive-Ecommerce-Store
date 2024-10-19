@@ -6,17 +6,24 @@ import { Link } from "react-router-dom";
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const handleSubmit =async (e) => {
+    e.preventDefault();
+    try {
+      await
+    } catch (error) {
+      
+    }
+  };
   return (
     <div className="flex flex-col md:flex-row py-2 items-center h-screen justify-center md:h-full mb-2">
-      {/* Image Section for larger screens */}
       <div className="hidden md:block">
         <img src={Signupimg} alt="Signup" className="w-full h-[700px]" />
       </div>
 
-      {/* Form Section */}
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center h-full">
         <form
           action=""
+          onSubmit={handleSubmit}
           className="flex flex-col gap-4 justify-center md:w-2/3 w-full px-4 md:px-8 lg:px-16"
         >
           <div className="text-left">
