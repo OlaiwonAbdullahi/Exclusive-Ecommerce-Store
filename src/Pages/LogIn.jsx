@@ -2,16 +2,30 @@ import { useState } from "react";
 import Button from "../Components/Button";
 import Signupimg from "../assets/Signup.svg";
 import { Link } from "react-router-dom";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Components/firebase";
+import { toast } from "react-toastify";
 
 const LogIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await
+      await signInWithEmailAndPassword(auth, email, password);
+      console.log("User LogIn Sucessful");
+      toast.success(
+        "Welcome Back to Exclusive Store Platform. Happy Shopping!",
+        {
+          position: "top-center",
+        }
+      );
+      window.location.href = "/account";
     } catch (error) {
-      
+      console.log(error.message);
+      toast.error(error.message, {
+        position: "top-center",
+      });
     }
   };
   return (
