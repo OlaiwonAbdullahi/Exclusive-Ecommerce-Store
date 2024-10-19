@@ -50,7 +50,11 @@ const ProductPage = () => {
   }
 
   if (!product) {
-    return <div>Loading...</div>;
+    return (
+      <div className=" h-screen items-center justify-center flex">
+        <div className="w-10 h-10 border-4 border-gray-200 border-t-secondary2 rounded-full animate-spin"></div>
+      </div>
+    );
   }
 
   return (

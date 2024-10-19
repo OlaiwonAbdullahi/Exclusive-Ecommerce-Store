@@ -4,10 +4,19 @@ import TopHeader from "./TopHeader";
 import { PiShoppingBagThin, PiShoppingCartThin } from "react-icons/pi";
 import { useState } from "react";
 import { LiaTimesCircle, LiaTimesSolid } from "react-icons/lia";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
   const [openUserMenu, setOpenUserMenu] = useState(false);
+  const location = useLocation(); // To get the current URL path
+
+  const menuItems = [
+    { label: "Home", to: "/" },
+    { label: "Contact", to: "/contact" },
+    { label: "About", to: "/about" },
+    { label: "Sign Up", to: "/signup" },
+    { label: "Shop", to: "/shop" },
+  ];
   return (
     <div className=" md:flex flex-col hidden w-full sticky top-0 bg-white z-20">
       <TopHeader />
@@ -17,23 +26,19 @@ const NavBar = () => {
         </div>
         <div className=" ">
           <ul className="flex gap-9 font-light">
-            <Link to="/">
-              <li className="border-b border-b-text1/20 hover:text-secondary2">
-                Home
-              </li>
-            </Link>
-            <Link to="/contact">
-              <li className=" hover:text-secondary2">Contact</li>
-            </Link>
-            <Link to="/about">
-              <li className=" hover:text-secondary2">About</li>
-            </Link>
-            <Link to="/signup">
-              <li className=" hover:text-secondary2">Sign Up</li>
-            </Link>
-            <Link to="/shop">
-              <li className=" hover:text-secondary2">Shop</li>
-            </Link>
+            {menuItems.map((item) => (
+              <Link key={item.label} to={item.to}>
+                <li
+                  className={`${
+                    location.pathname === item.to
+                      ? "text-text2 border-b-2  border-b-text1"
+                      : " hover:text-secondary2"
+                  }`}
+                >
+                  {item.label}
+                </li>
+              </Link>
+            ))}
           </ul>
         </div>
         <div className=" flex gap-5 items-center">
