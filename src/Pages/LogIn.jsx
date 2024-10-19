@@ -1,8 +1,11 @@
+import { useState } from "react";
 import Button from "../Components/Button";
 import Signupimg from "../assets/Signup.svg";
 import { Link } from "react-router-dom";
 
 const LogIn = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div className="flex flex-col md:flex-row py-2 items-center h-screen justify-center md:h-full mb-2">
       {/* Image Section for larger screens */}
@@ -25,12 +28,16 @@ const LogIn = () => {
             <input
               type="text"
               placeholder="Email or Phone Number"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="placeholder:text-text1 text-text1 border-b border-b-text1 p-2 focus:outline-none"
             />
 
             <input
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="placeholder:text-text1 text-text1 border-b border-b-text1 p-2 focus:outline-none"
             />
           </div>

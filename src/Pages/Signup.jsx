@@ -2,8 +2,12 @@ import Button from "../Components/Button";
 import { FcGoogle } from "react-icons/fc";
 import Signupimg from "../assets/Signup.svg";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const Signup = () => {
+  const [name, setName] = useState("");
+  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("");
   return (
     <div className="flex flex-col md:flex-row py-2 h-screen items-center justify-center">
       {/* Image Section */}
@@ -26,16 +30,22 @@ const Signup = () => {
             <input
               type="text"
               placeholder="Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
               className="placeholder:text-text1 text-text1 border-b border-b-text1 p-2 focus:outline-none"
             />
             <input
               type="text"
               placeholder="Email or Phone Number"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
               className="placeholder:text-text1 text-text1 border-b border-b-text1 p-2 focus:outline-none"
             />
             <input
               type="password"
               placeholder="Password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
               className="placeholder:text-text1 text-text1 border-b border-b-text1 p-2 focus:outline-none"
             />
           </div>
