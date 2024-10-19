@@ -18,6 +18,12 @@ const Account = () => {
 
           if (userDoc.exists()) {
             setUserDetails(userDoc.data());
+            toast.success(
+              "Welcome Back to Exclusive Store Platform. Happy Shopping!",
+              {
+                position: "top-center",
+              }
+            );
           } else {
             toast.error("No such user data found!");
           }
@@ -88,6 +94,7 @@ const Account = () => {
                       type="text"
                       id="firstname"
                       placeholder={userDetails.name}
+                      disabled
                       className="bg-text1/10 p-2 focus:outline-none text-sm rounded text-text1"
                     />
                   </div>
@@ -97,6 +104,7 @@ const Account = () => {
                       type="text"
                       id="lastname"
                       placeholder={userDetails.name}
+                      disabled
                       className="bg-text1/10 p-2 focus:outline-none text-sm rounded text-text1"
                     />
                   </div>
@@ -108,6 +116,7 @@ const Account = () => {
                       type="email"
                       id="email"
                       placeholder={userDetails.email}
+                      disabled
                       className="bg-text1/10 p-2 focus:outline-none text-sm rounded text-text1"
                     />
                   </div>
