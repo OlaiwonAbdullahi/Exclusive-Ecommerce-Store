@@ -11,6 +11,7 @@ import Footer from "./Components/Footer";
 import About from "./Pages/About";
 import Account from "./Pages/Account";
 import ProductPage from "./Pages/ProductPage";
+import CheckOut from "./Pages/CheckOut";
 
 const App = () => {
   return (
@@ -27,6 +28,7 @@ const App = () => {
           <Route path="/shop" element={<Shop />} />
           <Route path="/login" element={<LogIn />} />
           <Route path="/account" element={<Account />} />
+          <Route path="/checkout" element={<CheckOut />} />
           <Route path="/product/:id" element={<ProductPage />} />
         </Routes>
         <Footer />
