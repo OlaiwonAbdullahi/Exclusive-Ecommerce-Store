@@ -3,11 +3,25 @@ import { FcGoogle } from "react-icons/fc";
 import Signupimg from "../assets/Signup.svg";
 import { Link } from "react-router-dom";
 import { useState } from "react";
+import { createUserWithEmailAndPassword } from "firebase/auth";
+import { auth } from "../Components/firebase";
 
 const Signup = () => {
   const [name, setName] = useState("");
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
+
+  const handleRegister = async (e) => {
+    e.preventDefault();
+    try {
+      await createUserWithEmailAndPassword(auth, email, password);
+      const user = auth.currentUser;
+      console.log(user);
+      console.log("user sucessfully LoggedIn");
+    } catch (error) {
+      console.log(error);
+    }
+  };
   return (
     <div className="flex flex-col md:flex-row py-2 h-screen items-center justify-center">
       {/* Image Section */}
@@ -19,6 +33,7 @@ const Signup = () => {
       <div className="w-full md:w-1/2 flex flex-col items-center justify-center h-full">
         <form
           action=""
+          onSubmit={handleRegister}
           className="flex flex-col gap-4 justify-center md:w-2/3 w-full px-4 md:px-8 lg:px-16"
         >
           <div className="text-left">

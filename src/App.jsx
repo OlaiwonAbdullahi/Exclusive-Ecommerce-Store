@@ -13,9 +13,12 @@ import Account from "./Pages/Account";
 import ProductPage from "./Pages/ProductPage";
 import CheckOut from "./Pages/CheckOut";
 
+import { ToastContainer } from "react-toastify"; // Correct import
+import "react-toastify/dist/ReactToastify.css"; // Import the CSS for toastify
+
 const App = () => {
   return (
-    <div className=" font-Afacad ">
+    <div className="font-Afacad">
       <Router>
         <NavBar />
         <MobileNavBar />
@@ -31,6 +34,7 @@ const App = () => {
           <Route path="/checkout" element={<CheckOut />} />
           <Route path="/product/:id" element={<ProductPage />} />
         </Routes>
+        <ToastContainer />
         <Footer />
       </Router>
     </div>
