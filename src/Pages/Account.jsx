@@ -2,6 +2,7 @@ import Button from "../Components/Button";
 import Path from "../Components/Path";
 
 const Account = () => {
+  const name = "NAN";
   return (
     <div className=" p-10 justify-center flex flex-col items-center ">
       <div className=" flex items-center justify-between w-full ">
@@ -44,7 +45,7 @@ const Account = () => {
                 <input
                   type="text"
                   id="firstname"
-                  placeholder="Abdullahi"
+                  placeholder={name}
                   className=" bg-text1/10  p-2 focus:outline-none text-sm rounded text-text1"
                 />
               </div>
