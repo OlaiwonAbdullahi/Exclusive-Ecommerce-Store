@@ -110,7 +110,7 @@ const Cart = () => {
 
       <div className="p-5">
         <div className="flex justify-around">
-          <div className="border border-text2 rounded bg-white p-3 flex flex-col gap-2">
+          <div className="shadow-lg rounded bg-white p-3 flex flex-col gap-2">
             <div className="">Cart Total</div>
             <div className="flex justify-between border-b border-b-text1">
               <span>Subtotal:</span>
@@ -135,6 +135,7 @@ const Cart = () => {
         <CheckOutPage
           setOpenCheckout={setOpenCheckout}
           openCheckout={openCheckout}
+          total={total}
         />
       )}
     </div>
@@ -143,10 +144,14 @@ const Cart = () => {
 
 export default Cart;
 
-function CheckOutPage({ setOpenCheckout, openCheckout }) {
+function CheckOutPage({ setOpenCheckout, openCheckout, total }) {
   return (
-    <div className=" fixed inset-0 z-50 flex  justify-center items-center mx-auto bg-gray-400 text-text bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50  ">
-      <CheckOut setOpenCheckout={setOpenCheckout} openCheckout={openCheckout} />
+    <div className=" fixed inset-0 z-50 flex  justify-center items-center pt-10 mx-auto bg-gray-400 text-text bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50  ">
+      <CheckOut
+        setOpenCheckout={setOpenCheckout}
+        openCheckout={openCheckout}
+        total={total}
+      />
     </div>
   );
 }
