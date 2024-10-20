@@ -13,31 +13,35 @@ import Account from "./Pages/Account";
 import ProductPage from "./Pages/ProductPage";
 import CheckOut from "./Pages/CheckOut";
 
-import { ToastContainer } from "react-toastify"; // Correct import
-import "react-toastify/dist/ReactToastify.css"; // Import the CSS for toastify
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Provider } from "react-redux";
+import store from "./Components/Store";
 
 const App = () => {
   return (
-    <div className="font-Afacad">
-      <Router>
-        <NavBar />
-        <MobileNavBar />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/shop" element={<Shop />} />
-          <Route path="/login" element={<LogIn />} />
-          <Route path="/account" element={<Account />} />
-          <Route path="/checkout" element={<CheckOut />} />
-          <Route path="/product/:id" element={<ProductPage />} />
-        </Routes>
-        <ToastContainer />
-        <Footer />
-      </Router>
-    </div>
+    <Provider store={store}>
+      <div className="font-Afacad">
+        <Router>
+          <NavBar />
+          <MobileNavBar />
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/cart" element={<Cart />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/shop" element={<Shop />} />
+            <Route path="/login" element={<LogIn />} />
+            <Route path="/account" element={<Account />} />
+            <Route path="/checkout" element={<CheckOut />} />
+            <Route path="/product/:id" element={<ProductPage />} />
+          </Routes>
+          <ToastContainer />
+          <Footer />
+        </Router>
+      </div>
+    </Provider>
   );
 };
 
