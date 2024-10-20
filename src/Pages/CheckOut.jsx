@@ -14,7 +14,7 @@ const CheckOut = ({ setOpenCheckout, openCheckout, total }) => {
   const [town, setTown] = useState("");
   const [phoneNumber, setPhoneNumber] = useState("");
 
-  const amountInKobo = total * 1700 * 100;
+  const amountInKobo = total * 100;
 
   const componentProps = {
     email,
