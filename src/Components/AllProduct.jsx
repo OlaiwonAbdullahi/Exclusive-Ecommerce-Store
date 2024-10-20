@@ -3,13 +3,17 @@ import { PiShoppingCartThin } from "react-icons/pi";
 import Button from "./Button";
 import StarRating from "./StarRating";
 import { CiSliderHorizontal } from "react-icons/ci";
-import Categories from "./Categories";
+import { useDispatch } from "react-redux";
+
+import { addItemToCart } from "../Redux/CartSystem";
+
 import { Link } from "react-router-dom";
 
 const AllProduct = () => {
   const [allProducts, setAllProducts] = useState([]);
   const [error, setError] = useState(null);
 
+  const dispatch = useDispatch();
   useEffect(() => {
     const fetchAllProducts = async () => {
       try {
@@ -57,7 +61,7 @@ const AllProduct = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center">
         {allProducts.map((product) => (
-          <Product key={product.id} product={product} />
+          <Product key={product.id} product={product} dispatch={dispatch} />
         ))}
       </div>
       <div className=" flex justify-center">
@@ -72,7 +76,7 @@ const AllProduct = () => {
 
 export default AllProduct;
 
-function Product({ product }) {
+function Product({ product, dispatch }) {
   return (
     <Link to={`/product/${product?.id}`}>
       <div className="relative product bg-white rounded-lg shadow-md p-4 flex flex-col w-full max-w-[250px] mx-auto">
@@ -87,9 +91,15 @@ function Product({ product }) {
             -{Math.round(product.discountPercentage)}%
           </div>
 
-          <div className="absolute top-2 right-2 bg-text rounded-full p-1">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              dispatch(addItemToCart(product));
+            }}
+            className="absolute top-2 right-2 bg-text rounded-full p-1"
+          >
             <PiShoppingCartThin className="h-6 w-6 text-secondary2" />
-          </div>
+          </button>
         </div>
 
         <p className="font-medium mt-2">{product.title}</p>
