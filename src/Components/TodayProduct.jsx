@@ -4,11 +4,15 @@ import { PiShoppingCartThin } from "react-icons/pi";
 import Button from "./Button";
 import StarRating from "./StarRating";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { addItemToCart } from "../Redux/CartSystem";
 
 const TodayProduct = () => {
   const [todayProduct, setTodayProduct] = useState(null); // State to hold cart data
   const [error, setError] = useState(null); // State to hold any errors
 
+  const dispatch = useDispatch();
   useEffect(() => {
     const fetchTodayProduct = async () => {
       try {
@@ -52,7 +56,7 @@ const TodayProduct = () => {
         className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 justify-center"
       >
         {todayProduct.products.map((product) => (
-          <Product key={product.id} product={product} />
+          <Product key={product.id} product={product} dispatch={dispatch} />
         ))}
       </div>
       <div className=" flex justify-center">
@@ -64,7 +68,7 @@ const TodayProduct = () => {
 
 export default TodayProduct;
 
-function Product({ product }) {
+function Product({ product, dispatch }) {
   return (
     <Link to={`/product/${product?.id}`}>
       <div className="relative product bg-white rounded-lg shadow-md p-4 flex flex-col w-full max-w-[250px] mx-auto">
@@ -80,10 +84,15 @@ function Product({ product }) {
             -{Math.round(product.discountPercentage)}%
           </div>
 
-          {/* Shopping Cart Icon */}
-          <div className="absolute top-2 right-2 bg-text rounded-full p-1">
+          <button
+            onClick={(e) => {
+              e.preventDefault();
+              dispatch(addItemToCart(product));
+            }}
+            className="absolute top-2 right-2 bg-text rounded-full p-1"
+          >
             <PiShoppingCartThin className="h-6 w-6 text-secondary2" />
-          </div>
+          </button>
         </div>
 
         <p className="font-medium mt-2">{product.title}</p>
