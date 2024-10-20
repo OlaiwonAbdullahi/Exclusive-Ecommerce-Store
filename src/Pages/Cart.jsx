@@ -10,6 +10,7 @@ const Cart = () => {
   const [openCheckout, setOpenCheckout] = useState(false);
   const carts = useSelector((state) => state.user.cart); // Correct variable from Redux
   console.log(carts);
+  console.log(carts.length);
 
   const handleIncrement = (id) => {
     setQuantities((prevQuantities) => ({
@@ -130,17 +131,22 @@ const Cart = () => {
           </div>
         </div>
       </div>
-      {openCheckout && <CheckOutPage />}
+      {openCheckout && (
+        <CheckOutPage
+          setOpenCheckout={setOpenCheckout}
+          openCheckout={openCheckout}
+        />
+      )}
     </div>
   );
 };
 
 export default Cart;
 
-function CheckOutPage() {
+function CheckOutPage({ setOpenCheckout, openCheckout }) {
   return (
-    <div className=" fixed inset-0 z-50 flex  justify-center items-center mx-auto bg-black  ">
-      <CheckOut />
+    <div className=" fixed inset-0 z-50 flex  justify-center items-center mx-auto bg-gray-400 text-text bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50  ">
+      <CheckOut setOpenCheckout={setOpenCheckout} openCheckout={openCheckout} />
     </div>
   );
 }
