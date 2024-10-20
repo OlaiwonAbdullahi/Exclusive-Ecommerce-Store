@@ -7,6 +7,7 @@ import CheckOut from "./CheckOut";
 
 const Cart = () => {
   const [quantities, setQuantities] = useState({});
+  const [openCheckout, setOpenCheckout] = useState(false);
   const carts = useSelector((state) => state.user.cart); // Correct variable from Redux
   console.log(carts);
 
@@ -123,11 +124,13 @@ const Cart = () => {
               <span>Total:</span>
               <span>${total.toFixed(2)}</span>
             </div>
-            <Button width={200}>Proceed to checkout</Button>
+            <div className="" onClick={() => setOpenCheckout(!openCheckout)}>
+              <Button width={200}>Proceed to checkout</Button>
+            </div>
           </div>
         </div>
       </div>
-      <CheckOutPage />
+      {openCheckout && <CheckOutPage />}
     </div>
   );
 };
@@ -136,7 +139,7 @@ export default Cart;
 
 function CheckOutPage() {
   return (
-    <div className="">
+    <div className=" fixed inset-0 z-50 flex  justify-end  pt-20 pr-28">
       <CheckOut />
     </div>
   );

@@ -5,7 +5,7 @@ const CheckOut = () => {
   return (
     <>
       <Path>Cart/CheckOut</Path>
-      <div className=" flex justify-around">
+      <div className="   relative bg-gray-400 text-text bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50  w-1/5 max-w-md rounded-lg p-6 shadow-lg max-h-[40%] overflow-y-auto items-start gap-2 flex flex-col justify-center text-left">
         <div className=" basis-1/2 flex flex-col gap-2">
           <h2 className=" text-2xl font-semibold">Billing Details</h2>
           <form action="">
