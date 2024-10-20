@@ -6,11 +6,16 @@ import Button from "../Components/Button";
 import StarRating from "../Components/StarRating";
 import Categories from "../Components/Categories";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+
+import { addItemToCart } from "../Redux/CartSystem";
 
 const Shop = () => {
   const [shop, setShop] = useState([]);
   const [error, setError] = useState(null);
   const [categories, setCategories] = useState(null);
+
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const fetchAllProducts = async () => {
@@ -39,7 +44,7 @@ const Shop = () => {
 
   if (!shop.length) {
     return (
-      <div className=" h-screen items-center justify-center flex">
+      <div className="h-screen flex items-center justify-center">
         <div className="w-10 h-10 border-4 border-gray-200 border-t-secondary2 rounded-full animate-spin"></div>
       </div>
     );
@@ -71,7 +76,7 @@ const Shop = () => {
 
       <div className="grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-8 justify-center">
         {shop.map((product) => (
-          <Product key={product.id} product={product} />
+          <Product key={product.id} product={product} dispatch={dispatch} />
         ))}
       </div>
     </div>
@@ -79,11 +84,10 @@ const Shop = () => {
 };
 
 export default Shop;
-
-function Product({ product }) {
+function Product({ product, dispatch }) {
   return (
-    <Link to={`/product/${product?.id}`}>
-      <div className="relative product bg-white rounded-lg shadow-md p-4 flex flex-col w-full max-w-[250px] mx-auto">
+    <div className="relative product bg-white rounded-lg shadow-md p-4 flex flex-col w-full max-w-[250px] mx-auto">
+      <Link to={`/product/${product?.id}`}>
         <div className="relative bg-secondary rounded-md">
           <img
             src={product.thumbnail || "placeholder-image-url.jpg"}
@@ -95,9 +99,15 @@ function Product({ product }) {
             -{Math.round(product.discountPercentage)}%
           </div>
 
-          <div className="absolute top-2 right-2 bg-text rounded-full p-1">
+          <button
+            onClick={(e) => {
+              e.preventDefault(); // Prevent default link behavior
+              dispatch(addItemToCart(product));
+            }}
+            className="absolute top-2 right-2 bg-text rounded-full p-1"
+          >
             <PiShoppingCartThin className="h-6 w-6 text-secondary2" />
-          </div>
+          </button>
         </div>
 
         <p className="font-medium mt-2">{product.title}</p>
@@ -107,14 +117,13 @@ function Product({ product }) {
           </span>
           <span className="text-text1 line-through">
             $
-            {(
-              (product.price * (100 + product.discountPercentage)) /
-              100
-            ).toFixed(2)}
+            {(product.price / (1 - product.discountPercentage / 100)).toFixed(
+              2
+            )}
           </span>
         </div>
         <StarRating />
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
