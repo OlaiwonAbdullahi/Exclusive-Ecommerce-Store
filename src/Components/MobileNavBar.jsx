@@ -29,10 +29,14 @@ const MobileNavBar = () => {
           </button>
 
           <CiHeart className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
-          <PiShoppingCartThin className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
-          <button className="" onClick={() => setOpenUserMenu(!openUserMenu)}>
-            <CiUser className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
-          </button>
+          <Link to="/cart">
+            <PiShoppingCartThin className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
+          </Link>
+          <Link to="/account">
+            <button className="" onClick={() => setOpenUserMenu(!openUserMenu)}>
+              <CiUser className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
+            </button>
+          </Link>
           <button onClick={() => setOpenMenu(!openMenu)}>
             {!openMenu ? (
               <CiMenuFries className="h-6 w-6" />
