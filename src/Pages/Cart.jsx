@@ -3,6 +3,7 @@ import Path from "../Components/Path";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import Button from "../Components/Button";
 import { useSelector } from "react-redux";
+import CheckOut from "./CheckOut";
 
 const Cart = () => {
   const [quantities, setQuantities] = useState({});
@@ -126,8 +127,17 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <CheckOutPage />
     </div>
   );
 };
 
 export default Cart;
+
+function CheckOutPage() {
+  return (
+    <div className="">
+      <CheckOut />
+    </div>
+  );
+}

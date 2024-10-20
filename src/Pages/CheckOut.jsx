@@ -1,3 +1,4 @@
+import Button from "../Components/Button";
 import Path from "../Components/Path";
 
 const CheckOut = () => {
@@ -83,6 +84,29 @@ const CheckOut = () => {
               <span>Save this information for faster check-out next time</span>
             </div>
           </form>
+        </div>
+        <div className="">
+          <div className="p-5">
+            <div className="flex justify-around">
+              <div className="border border-text2 rounded bg-white p-3 flex flex-col gap-2">
+                <div className="">Cart Total</div>
+                <div className="flex justify-between border-b border-b-text1">
+                  <span>Subtotal:</span>
+                  <span>${total.toFixed(2)}</span>
+                </div>
+
+                <div className="flex justify-between border-b border-b-text1">
+                  <span>Shipping:</span>
+                  <span>Free</span>
+                </div>
+                <div className="flex justify-between">
+                  <span>Total:</span>
+                  <span>${total.toFixed(2)}</span>
+                </div>
+                <Button width={200}>Proceed to checkout</Button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </>
