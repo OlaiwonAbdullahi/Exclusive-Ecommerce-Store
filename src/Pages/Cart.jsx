@@ -139,7 +139,7 @@ export default Cart;
 
 function CheckOutPage() {
   return (
-    <div className=" fixed inset-0 z-50 flex  justify-end  pt-20 pr-28">
+    <div className=" fixed inset-0 z-50 flex  justify-center items-center mx-auto bg-black  ">
       <CheckOut />
     </div>
   );
