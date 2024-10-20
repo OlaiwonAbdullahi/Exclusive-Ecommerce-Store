@@ -49,7 +49,7 @@ const Cart = () => {
           {carts?.map((product) => (
             <div
               key={product.id}
-              className="flex justify-around items-center p-3 border border-text1/10 shadow rounded md:w-3/4 w-full"
+              className="flex justify-between items-center p-3 border border-text1/10 shadow rounded md:w-3/4 w-full"
             >
               <span className="flex gap-3 items-center">
                 <img
@@ -57,7 +57,7 @@ const Cart = () => {
                   alt={product.title}
                   className="w-10 h-10 rounded-md"
                 />
-                {product.title}
+                {product.title.slice(0, 15)}...
               </span>
               <span>${product.price}</span>
 
