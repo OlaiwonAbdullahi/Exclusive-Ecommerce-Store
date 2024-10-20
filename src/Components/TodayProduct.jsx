@@ -59,9 +59,11 @@ const TodayProduct = () => {
           <Product key={product.id} product={product} dispatch={dispatch} />
         ))}
       </div>
-      <div className=" flex justify-center">
-        <Button width={170}>View All Product</Button>
-      </div>
+      <Link to="/shop">
+        <div className=" flex justify-center">
+          <Button width={170}>View All Product</Button>
+        </div>
+      </Link>
     </div>
   );
 };

@@ -54,7 +54,9 @@ const BestSelling = () => {
           </span>
         </div>
         <div>
-          <Button width={100}>View All</Button>
+          <Link to="/shop">
+            <Button width={100}>View All</Button>
+          </Link>
         </div>
       </div>
 
