@@ -98,7 +98,7 @@ const Cart = () => {
 
       {carts?.length > 0 && (
         <div className="flex justify-center">
-          <div className="w-6/12 justify-between flex">
+          <div className="w-6/12 justify-between flex gap-5">
             <Link to="/">
               <button className="border whitespace-nowrap border-text2 rounded bg-white text-sm p-2 font-medium px-4">
                 Return to Shop
