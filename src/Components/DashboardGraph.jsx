@@ -45,7 +45,7 @@ const DashboardGraph = () => {
   ];
 
   return (
-    <div className="flex p-2 gap-8">
+    <div className="flex p-2 gap-8 flex-col md:flex-row">
       <div className="bg-white shadow-sm rounded basis-2/3 p-2 pt-4 text-sm">
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={data}>
@@ -79,7 +79,7 @@ const DashboardGraph = () => {
               type="monotone"
               dataKey="revenue"
               stroke="#DB4444"
-              fill="#DB4444"
+              fill="#E07575"
             />
           </AreaChart>
         </ResponsiveContainer>

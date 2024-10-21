@@ -4,8 +4,8 @@ import visitor from "../assets/visitor.svg";
 import conversion from "../assets/conversion.svg";
 const DashBoardStats = () => {
   return (
-    <div className=" flex justify-around gap-5 p-2">
-      <div className=" bg-white shadow-md p-3 rounded-md flex flex-col gap-2 basis-1/4 w-2/3">
+    <div className=" flex justify-around gap-5 p-2 flex-col md:flex-row">
+      <div className=" bg-white shadow-md p-3 rounded-md flex flex-col gap-2 basis-1/4 w-full">
         <div className=" flex justify-between">
           <h2 className="text-text1 text-sm">Revenue</h2>
           <span className="text-sm text-secondary2">+22%</span>
@@ -16,7 +16,7 @@ const DashBoardStats = () => {
         </div>
       </div>
       <></>
-      <div className=" bg-white shadow-md p-3 rounded-md flex flex-col gap-2 basis-1/4 w-2/3">
+      <div className=" bg-white shadow-md p-3 rounded-md flex flex-col gap-2 basis-1/4 w-full">
         <div className=" flex justify-between">
           <h2 className="text-text1 text-sm">Orders</h2>
           <span className="text-sm text-secondary2">-25%</span>
@@ -27,7 +27,7 @@ const DashBoardStats = () => {
         </div>
       </div>
       <></>
-      <div className=" bg-white shadow-md p-3 rounded-md flex flex-col gap-2 basis-1/4 w-2/3">
+      <div className=" bg-white shadow-md p-3 rounded-md flex flex-col gap-2 basis-1/4 w-full">
         <div className=" flex justify-between">
           <h2 className="text-text1 text-sm">Visitors</h2>
           <span className="text-sm text-button1">+49%</span>
@@ -38,7 +38,7 @@ const DashBoardStats = () => {
         </div>
       </div>
       <></>
-      <div className=" bg-white shadow-md p-3 rounded-md flex flex-col gap-2 basis-1/4 w-2/3">
+      <div className=" bg-white shadow-md p-3 rounded-md flex flex-col gap-2 basis-1/4 w-full">
         <div className=" flex justify-between">
           <h2 className="text-text1 text-sm">Conversion</h2>
           <span className="text-sm text-secondary2">+1.9%</span>

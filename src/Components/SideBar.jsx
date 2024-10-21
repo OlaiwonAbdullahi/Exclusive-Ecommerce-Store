@@ -20,7 +20,7 @@ const Sidebar = ({ active, setActive }) => {
   ];
 
   return (
-    <div className="bg-secondary2   w-32 text-text h-screen flex flex-col gap-2">
+    <div className="bg-secondary2   w-32 text-text h-screen md:flex flex-col gap-2 hidden">
       <ul className="flex flex-col text-primarySelect">
         {menuItems.map((item) => (
           <li
