@@ -9,7 +9,7 @@ const DashboardHeader = ({ active }) => {
         <div className="flex items-center bg-white rounded-md text-sm p-2 shadow-sm">
           Oct 1 to Oct 23 <MdKeyboardArrowDown className=" text-text1" />
         </div>
-        <div className="p-2 text-text1">
+        <div className="p-1 text-text1">
           <RxDotsHorizontal />
         </div>
       </div>
