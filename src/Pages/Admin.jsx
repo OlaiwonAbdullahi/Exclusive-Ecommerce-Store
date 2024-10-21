@@ -2,6 +2,7 @@ import { useState } from "react";
 import DashboardHeader from "../Components/DashoardHeader";
 import Sidebar from "../Components/SideBar";
 import DashBoardStats from "../Components/DashBoardStats";
+import DashboardGraph from "../Components/DashboardGraph";
 
 const Admin = () => {
   const [active, setActive] = useState("Home");
@@ -11,6 +12,7 @@ const Admin = () => {
       <div className="flex-grow p-4">
         <DashboardHeader active={active} setActive={setActive} />
         <DashBoardStats />
+        <DashboardGraph />
       </div>
     </div>
   );
