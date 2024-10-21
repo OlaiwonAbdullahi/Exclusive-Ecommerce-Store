@@ -23,15 +23,15 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="bg-secondary2  border-r-select border-r-2 w-32 text-text h-screen flex flex-col gap-2">
+    <div className="bg-secondary2   w-32 text-text h-screen flex flex-col gap-2">
       <ul className="flex flex-col text-primarySelect">
         {menuItems.map((item) => (
           <li
             key={item.label}
-            className={`flex items-center gap-2 text-sm/6 p-1 m-2 rounded-lg ${
+            className={`flex items-center gap-2 text-sm/6 p-1 m-2 rounded-lg cursor-pointer ${
               active === item.label
-                ? "text-primary bg-select"
-                : "hover:text-primary hover:bg-select"
+                ? "text-secondary2 bg-white "
+                : "hover:text-primary hover:bg-select  "
             }`}
             onClick={() => setActive(item.label)}
           >
