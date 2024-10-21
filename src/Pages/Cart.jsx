@@ -77,7 +77,7 @@ const Cart = () => {
                     onClick={() => handleIncrement(product.id)}
                     className="bg-white hover:bg-secondary2 hover:text-text items-center flex justify-center text-xl rounded-t-sm"
                   >
-                    <MdKeyboardArrowUp />
+                    <MdKeyboardArrowUp cla />
                   </button>
                   <button
                     onClick={() => handleDecrement(product.id)}
@@ -105,7 +105,7 @@ const Cart = () => {
               </button>
             </Link>
             <Link to="/shop">
-              <button className="border border-text2 rounded bg-white text-sm p-2 font-medium px-4">
+              <button className="border whitespace-nowrap border-text2 rounded bg-white text-sm p-2 font-medium px-4">
                 Update Cart
               </button>
             </Link>
