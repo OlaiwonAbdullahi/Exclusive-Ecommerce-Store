@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { addItemToCart } from "../Redux/CartSystem";
+import { toast } from "react-toastify";
 
 const TodayProduct = () => {
   const [todayProduct, setTodayProduct] = useState(null); // State to hold cart data
@@ -90,6 +91,9 @@ function Product({ product, dispatch }) {
             onClick={(e) => {
               e.preventDefault();
               dispatch(addItemToCart(product));
+              toast.success("Item added to cart!", {
+                position: "top-center",
+              });
             }}
             className="absolute top-2 right-2 bg-text rounded-full p-1"
           >

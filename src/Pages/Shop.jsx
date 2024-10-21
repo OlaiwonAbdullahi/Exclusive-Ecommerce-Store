@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
 import { addItemToCart } from "../Redux/CartSystem";
+import { toast } from "react-toastify";
 
 const Shop = () => {
   const [shop, setShop] = useState([]);
@@ -101,8 +102,11 @@ function Product({ product, dispatch }) {
 
           <button
             onClick={(e) => {
-              e.preventDefault(); // Prevent default link behavior
+              e.preventDefault();
               dispatch(addItemToCart(product));
+              toast.success("Item added to cart!", {
+                position: "top-center",
+              });
             }}
             className="absolute top-2 right-2 bg-text rounded-full p-1"
           >

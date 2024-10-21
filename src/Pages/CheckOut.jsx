@@ -24,11 +24,11 @@ const CheckOut = ({ setOpenCheckout, openCheckout, total }) => {
     },
     publicKey,
     text: "Pay",
-    onSuccess: () => toast.success("Pa",{
+    onSuccess: () =>
+      toast.success("Payment Received🚀", {
         position: "top-center",
-      }
-    );
-    
+      }),
+
     onClose: () => alert("Are you sure you want to close?"),
   };
 
