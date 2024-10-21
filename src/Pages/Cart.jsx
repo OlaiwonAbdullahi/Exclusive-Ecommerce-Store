@@ -4,6 +4,7 @@ import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import Button from "../Components/Button";
 import { useSelector } from "react-redux";
 import CheckOut from "./CheckOut";
+import { Link } from "react-router-dom";
 
 const Cart = () => {
   const [quantities, setQuantities] = useState({});
@@ -98,12 +99,16 @@ const Cart = () => {
       {carts?.length > 0 && (
         <div className="flex justify-center">
           <div className="w-6/12 justify-between flex">
-            <button className="border border-text2 rounded bg-white text-sm p-2 font-medium px-4">
-              Return to Shop
-            </button>
-            <button className="border border-text2 rounded bg-white text-sm p-2 font-medium px-4">
-              Update Cart
-            </button>
+            <Link to="/">
+              <button className="border whitespace-nowrap border-text2 rounded bg-white text-sm p-2 font-medium px-4">
+                Return to Shop
+              </button>
+            </Link>
+            <Link to="/shop">
+              <button className="border border-text2 rounded bg-white text-sm p-2 font-medium px-4">
+                Update Cart
+              </button>
+            </Link>
           </div>
         </div>
       )}
