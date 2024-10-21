@@ -5,6 +5,8 @@ import {
   XAxis,
   YAxis,
   ResponsiveContainer,
+  AreaChart,
+  Area,
 } from "recharts";
 
 const DashboardGraph = () => {
@@ -43,18 +45,45 @@ const DashboardGraph = () => {
   ];
 
   return (
-    <div className="flex p-2">
-      <div className="bg-white shadow-sm rounded basis-2/3 p-2 pt-4">
+    <div className="flex p-2 gap-8">
+      <div className="bg-white shadow-sm rounded basis-2/3 p-2 pt-4 text-sm">
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={data}>
             <CartesianGrid stroke="#ffffff" />
             <XAxis dataKey="day" />
             <YAxis />
-            <Bar dataKey="revenue" fill="#DB4444" radius={[10, 10, 10, 10]} />
+            <Bar
+              dataKey="revenue"
+              fill="#DB4444"
+              radius={[10, 10, 10, 10]}
+              barSize={5}
+            />
           </BarChart>
         </ResponsiveContainer>
       </div>
-      <div className="basis-1/3"></div>
+      <div className="basis-1/3 bg-white shadow-sm rounded  p-2 pt-4 text-sm">
+        <ResponsiveContainer width="100%" height={300}>
+          <AreaChart
+            data={data}
+            margin={{
+              top: 5,
+              right: 0,
+              left: 0,
+              bottom: 5,
+            }}
+          >
+            <XAxis dataKey="day" />
+            <YAxis />
+            <CartesianGrid stroke="#ffffff" />
+            <Area
+              type="monotone"
+              dataKey="revenue"
+              stroke="#DB4444"
+              fill="#DB4444"
+            />
+          </AreaChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };
