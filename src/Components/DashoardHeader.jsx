@@ -12,7 +12,7 @@ const DashboardHeader = ({ active, openSidebar, setOpenSidebar }) => {
           Oct 1 to Oct 23 <MdKeyboardArrowDown className=" text-text1" />
         </div>
         <button
-          className="mb-4 flex justify-end"
+          className="mb-4 flex justify-end md:hidden items-center pt-3"
           onClick={() => setOpenSidebar(!openSidebar)}
         >
           {!openSidebar ? (
@@ -20,6 +20,9 @@ const DashboardHeader = ({ active, openSidebar, setOpenSidebar }) => {
           ) : (
             <LiaTimesSolid className="h-5 w-5" />
           )}
+        </button>
+        <button className="hidden md:flex">
+          <RxDotsHorizontal />
         </button>
       </div>
     </div>

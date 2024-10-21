@@ -25,7 +25,7 @@ const Admin = () => {
         />
       </div>
 
-      <div className="flex-grow">
+      <div className="flex-grow md:m-3">
         {openSidebar && (
           <div className="md:hidden flex z-50">
             <Sidebar
