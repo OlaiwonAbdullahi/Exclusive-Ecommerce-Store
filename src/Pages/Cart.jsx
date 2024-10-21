@@ -72,7 +72,7 @@ const Cart = () => {
                   readOnly
                   className="bg-white text-base md:text-2xl h-5 md:h-10 border-r border-r-text2 focus:outline-none p-1 w-16 text-center"
                 />
-                <div className=" h-5 md:h-10 flex flex-col">
+                <div className=" h-5 md:h-10 flex flex-col w-5">
                   <button
                     onClick={() => handleIncrement(product.id)}
                     className="bg-white hover:bg-secondary2 hover:text-text items-center flex justify-center text-xl rounded-t-sm"
