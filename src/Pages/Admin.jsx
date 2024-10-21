@@ -1,5 +1,11 @@
+import Sidebar from "../Components/SideBar";
+
 const Admin = () => {
-  return <div>Admin</div>;
+  return (
+    <div>
+      <Sidebar />
+    </div>
+  );
 };
 
 export default Admin;

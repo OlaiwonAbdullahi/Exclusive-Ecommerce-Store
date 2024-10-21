@@ -17,6 +17,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "react-redux";
 import store from "./Components/Store";
+import Admin from "./Pages/Admin";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
             <Route path="/account" element={<Account />} />
             <Route path="/checkout" element={<CheckOut />} />
             <Route path="/product/:id" element={<ProductPage />} />
+            <Route path="/admin" element={<Admin />} />
           </Routes>
           <ToastContainer />
           <Footer />
