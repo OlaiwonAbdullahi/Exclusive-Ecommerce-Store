@@ -93,7 +93,8 @@ function Product({ product, dispatch }) {
               e.preventDefault();
               dispatch(addItemToCart(product));
               toast.success("Item added to cart!", {
-                position: "top-center",
+                position: "top-right",
+                icon: <PiShoppingCartThin className=" h-6 w-6" />,
               });
             }}
             className="absolute top-2 right-2 bg-text rounded-full p-1"
