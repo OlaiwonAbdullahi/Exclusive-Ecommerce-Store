@@ -1,3 +1,4 @@
+import { MdArrowForward } from "react-icons/md";
 import {
   BarChart,
   Bar,
@@ -47,6 +48,12 @@ const DashboardGraph = () => {
   return (
     <div className="flex p-2 gap-8 flex-col md:flex-row">
       <div className="bg-white shadow-sm rounded basis-2/3 p-2 pt-4 text-sm">
+        <div className=" flex items-center justify-between">
+          <span className="text-xl font-semibold">Dashboard</span>
+          <div className=" flex items-center">
+            Advance Report <MdArrowForward />
+          </div>
+        </div>
         <ResponsiveContainer width="100%" height={300}>
           <BarChart data={data}>
             <CartesianGrid stroke="#ffffff" />
