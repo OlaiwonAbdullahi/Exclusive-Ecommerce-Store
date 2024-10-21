@@ -11,8 +11,8 @@ import { GoPeople } from "react-icons/go";
 const Sidebar = ({ active, setActive }) => {
   const menuItems = [
     { icon: TbSmartHome, label: "Home" },
-    { icon: CiBoxList, label: "Orders" },
     { icon: CiShoppingTag, label: "Product" },
+    { icon: CiBoxList, label: "Orders" },
     { icon: CiFolderOn, label: "Cartegories" },
     { icon: GoPeople, label: "Customers" },
     { icon: CiGift, label: "Coupons" },

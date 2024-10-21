@@ -16,6 +16,7 @@ const NavBar = () => {
     { label: "About", to: "/about" },
     { label: "Sign Up", to: "/signup" },
     { label: "Shop", to: "/shop" },
+    { label: "Dashboard", to: "/admin" },
   ];
   return (
     <div className=" md:flex flex-col hidden w-full sticky top-0 bg-white z-20">

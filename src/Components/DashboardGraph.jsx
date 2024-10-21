@@ -35,20 +35,20 @@ const DashboardGraph = () => {
     { day: 21, revenue: 1600 },
     { day: 22, revenue: 1400 },
     { day: 23, revenue: 1300 },
-    { day: 24, revenue: 1750 },
+    /*{ day: 24, revenue: 1750 },
     { day: 25, revenue: 1800 },
     { day: 26, revenue: 1500 },
     { day: 27, revenue: 1600 },
     { day: 28, revenue: 1200 },
     { day: 29, revenue: 1550 },
     { day: 30, revenue: 1700 },
-    { day: 31, revenue: 1650 },
+    { day: 31, revenue: 1650 },*/
   ];
 
   return (
     <div className="flex p-2 gap-8 flex-col md:flex-row">
       <div className="bg-white shadow-sm rounded basis-2/3 p-2 pt-4 text-sm">
-        <div className=" flex items-center justify-between">
+        <div className=" flex items-center justify-between m-2">
           <span className="text-xl font-semibold">Dashboard</span>
           <div className=" flex items-center">
             Advance Report <MdArrowForward />
