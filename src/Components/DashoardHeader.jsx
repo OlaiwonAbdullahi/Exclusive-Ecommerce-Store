@@ -7,9 +7,9 @@ const DashboardHeader = ({ active }) => {
       <div className="text-xl font-bold">{active}</div>
       <div className="flex gap-4 items-center">
         <div className="flex items-center bg-white rounded-md text-sm p-2 shadow-sm">
-          Oct 1 to Oct 23 <MdKeyboardArrowDown />
+          Oct 1 to Oct 23 <MdKeyboardArrowDown className=" text-text1" />
         </div>
-        <div className="p-2">
+        <div className="p-2 text-text1">
           <RxDotsHorizontal />
         </div>
       </div>
