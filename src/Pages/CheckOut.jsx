@@ -1,11 +1,10 @@
 import { useState } from "react";
 import { PaystackButton } from "react-paystack";
-import Button from "../Components/Button";
+import { toast } from "react-toastify";
 
 const CheckOut = ({ setOpenCheckout, openCheckout, total }) => {
   const publicKey = "pk_test_9f301a75ad2d5aa4e917d824f306395614690196";
 
-  // States for form fields
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [company, setCompany] = useState("");
@@ -25,7 +24,11 @@ const CheckOut = ({ setOpenCheckout, openCheckout, total }) => {
     },
     publicKey,
     text: "Pay",
-    onSuccess: () => alert("Thank you for using our platform"),
+    onSuccess: () => toast.success("Pa",{
+        position: "top-center",
+      }
+    );
+    
     onClose: () => alert("Are you sure you want to close?"),
   };
 
