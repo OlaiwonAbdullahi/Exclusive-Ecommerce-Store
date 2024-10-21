@@ -69,11 +69,13 @@ const Signup = () => {
               type="text"
               placeholder="Name"
               value={name}
+              required
               onChange={(e) => setName(e.target.value)}
               className="placeholder:text-text1 text-text1 border-b border-b-text1 p-2 focus:outline-none"
             />
             <input
               type="text"
+              required
               placeholder="Email or Phone Number"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
@@ -83,6 +85,7 @@ const Signup = () => {
               type="password"
               placeholder="Password"
               value={password}
+              required
               onChange={(e) => setPassword(e.target.value)}
               className="placeholder:text-text1 text-text1 border-b border-b-text1 p-2 focus:outline-none"
             />

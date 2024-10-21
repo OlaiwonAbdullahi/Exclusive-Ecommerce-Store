@@ -14,12 +14,11 @@ const MobileNavBar = () => {
 
   return (
     <div className="sticky z-20 top-0 flex flex-col md:hidden w-full">
-      {/*<TopHeader />*/}
       <div className=" bg-white  flex justify-between px-3 p-3 items-center border-b border-b-text1/20">
         <div className="font-semibold text-button text-xl whitespace-nowrap ">
           Exclusive Store
         </div>
-        <div className="flex gap-3">
+        <div className="flex gap-3 items-center">
           <button onClick={() => setOpenSearch(!openSearch)}>
             {!openSearch ? (
               <GoSearch className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
@@ -28,12 +27,14 @@ const MobileNavBar = () => {
             )}
           </button>
 
-          <CiHeart className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
           <Link to="/cart">
             <PiShoppingCartThin className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
           </Link>
           <Link to="/account">
-            <button className="" onClick={() => setOpenUserMenu(!openUserMenu)}>
+            <button
+              className=" flex items-center"
+              onClick={() => setOpenUserMenu(!openUserMenu)}
+            >
               <CiUser className="h-6 w-6 hover:text-secondary2 cursor-pointer" />
             </button>
           </Link>

@@ -43,7 +43,6 @@ const NavBar = () => {
         </div>
         <div className=" flex gap-5 items-center">
           <SearchBar />
-          <CiHeart className=" h-6 w-6 hover:text-secondary2 cursor-pointer" />
           <Link to="/cart">
             <PiShoppingCartThin className=" h-6 w-6 hover:text-secondary2 cursor-pointer" />
           </Link>

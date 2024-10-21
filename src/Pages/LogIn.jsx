@@ -50,6 +50,7 @@ const LogIn = () => {
               type="text"
               placeholder="Email or Phone Number"
               value={email}
+              required
               onChange={(e) => setEmail(e.target.value)}
               className="placeholder:text-text1 text-text1 border-b border-b-text1 p-2 focus:outline-none"
             />
@@ -58,6 +59,7 @@ const LogIn = () => {
               type="password"
               placeholder="Password"
               value={password}
+              required
               onChange={(e) => setPassword(e.target.value)}
               className="placeholder:text-text1 text-text1 border-b border-b-text1 p-2 focus:outline-none"
             />

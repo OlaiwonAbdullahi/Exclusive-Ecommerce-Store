@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 import StarRating from "../Components/StarRating";
 import Button from "../Components/Button";
-import { CiHeart } from "react-icons/ci";
+import { PiShoppingCartThin } from "react-icons/pi";
 import { GoPlus } from "react-icons/go";
 import { FiMinus } from "react-icons/fi";
 import { useEffect, useState } from "react";
@@ -12,7 +12,6 @@ const ProductPage = () => {
   const [product, setProduct] = useState(null);
   const [error, setError] = useState(null);
 
-  // Get product ID from the URL using useParams()
   const { id } = useParams();
 
   const handleIncrement = () => {
@@ -146,7 +145,7 @@ const ProductPage = () => {
               </div>
 
               <div className="border border-text2 rounded p-1 bg-white hover:bg-secondary2 hover:text-text hover:border-secondary2">
-                <CiHeart className="h-6 w-6" />
+                <PiShoppingCartThin className="h-6 w-6" />
               </div>
             </div>
 

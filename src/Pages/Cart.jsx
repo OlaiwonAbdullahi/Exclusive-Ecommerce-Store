@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import Path from "../Components/Path";
 import { MdKeyboardArrowDown, MdKeyboardArrowUp } from "react-icons/md";
 import Button from "../Components/Button";
