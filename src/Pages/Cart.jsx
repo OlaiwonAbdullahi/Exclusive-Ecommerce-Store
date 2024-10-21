@@ -65,7 +65,7 @@ const Cart = () => {
               </span>
               <span>${product.price}</span>
 
-              <div className="flex flex-row border border-text2 md:h-11 h-6 rounded">
+              <div className="flex flex-row border border-text2 md:h-11 h-8 rounded">
                 <input
                   type="number"
                   value={quantities[product.id] || 1}
