@@ -3,28 +3,45 @@ import DashboardHeader from "../Components/DashoardHeader";
 import Sidebar from "../Components/SideBar";
 import DashBoardStats from "../Components/DashBoardStats";
 import DashboardGraph from "../Components/DashboardGraph";
-import { CiGrid42 } from "react-icons/ci";
-import { LiaTimesSolid } from "react-icons/lia";
 
 const Admin = () => {
   const [active, setActive] = useState("Home");
   const [openSidebar, setOpenSidebar] = useState(false);
+
+  const handleMenuItemClick = (label) => {
+    setActive(label);
+    if (openSidebar) {
+      setOpenSidebar(false);
+    }
+  };
+
   return (
-    <div className="flex bg-[#F8F8F8] min-h-screen">
-      <Sidebar
-        className="w-1/4"
-        active={active}
-        setActive={setActive}
-        openSidebar={openSidebar}
-      />
-      <div
-        className="flex-grow p-4"
-        onClick={() => setOpenSidebar(!openSidebar)}
-      >
-        <button className="">
-          {!openSidebar ? <CiGrid42 className=" h-5 w-5" /> : <LiaTimesSolid />}
-        </button>
-        <DashboardHeader active={active} setActive={setActive} />
+    <div className="flex justify-between min-h-screen bg-[#F8F8F8]">
+      <div className="hidden md:block w-1/12 mr-5">
+        <Sidebar
+          active={active}
+          setActive={handleMenuItemClick}
+          openSidebar={true}
+        />
+      </div>
+
+      <div className="flex-grow">
+        {openSidebar && (
+          <div className="md:hidden flex z-50">
+            <Sidebar
+              active={active}
+              setActive={handleMenuItemClick}
+              openSidebar={openSidebar}
+            />
+          </div>
+        )}
+
+        <DashboardHeader
+          active={active}
+          setActive={setActive}
+          openSidebar={openSidebar}
+          setOpenSidebar={setOpenSidebar}
+        />
         <DashBoardStats />
         <DashboardGraph />
       </div>

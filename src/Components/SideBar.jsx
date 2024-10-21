@@ -8,40 +8,36 @@ import {
 } from "react-icons/ci";
 import { GoPeople } from "react-icons/go";
 
-const Sidebar = ({ active, setActive, openSidebar }) => {
+const Sidebar = ({ active, setActive }) => {
   const menuItems = [
     { icon: TbSmartHome, label: "Home" },
     { icon: CiShoppingTag, label: "Product" },
     { icon: CiBoxList, label: "Orders" },
-    { icon: CiFolderOn, label: "Cartegories" },
+    { icon: CiFolderOn, label: "Categories" },
     { icon: GoPeople, label: "Customers" },
     { icon: CiGift, label: "Coupons" },
     { icon: CiSettings, label: "Settings" },
   ];
 
   return (
-    <>
-      {openSidebar && (
-        <div className="bg-secondary2   w-32 text-text h-screen flex flex-col gap-2 ">
-          <ul className="flex flex-col text-primarySelect">
-            {menuItems.map((item) => (
-              <li
-                key={item.label}
-                className={`flex items-center gap-2 text-sm/6 p-1 m-2 rounded-lg cursor-pointer ${
-                  active === item.label
-                    ? "text-secondary2 bg-white "
-                    : "hover:text-primary hover:bg-select  "
-                }`}
-                onClick={() => setActive(item.label)}
-              >
-                <item.icon className="h-5 w-5" />
-                {item.label}
-              </li>
-            ))}
-          </ul>
-        </div>
-      )}
-    </>
+    <div className="bg-secondary2 w-40 text-text h-screen flex flex-col gap-2 absolute ">
+      <ul className="flex flex-col text-primarySelect">
+        {menuItems.map((item) => (
+          <li
+            key={item.label}
+            className={`flex items-center gap-2 text-sm p-2 m-2 rounded-lg cursor-pointer ${
+              active === item.label
+                ? "text-secondary2 bg-white"
+                : "hover:text-primary hover:bg-select"
+            }`}
+            onClick={() => setActive(item.label)} // Call setActive on click
+          >
+            <item.icon className="h-5 w-5" />
+            {item.label}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 };
 
