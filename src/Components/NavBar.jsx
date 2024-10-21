@@ -1,4 +1,4 @@
-import { CiHeart, CiLogout, CiStar, CiUser } from "react-icons/ci";
+import { CiLogout, CiStar, CiUser } from "react-icons/ci";
 import SearchBar from "./SearchBar";
 import TopHeader from "./TopHeader";
 import { PiShoppingBagThin, PiShoppingCartThin } from "react-icons/pi";
@@ -8,7 +8,7 @@ import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
   const [openUserMenu, setOpenUserMenu] = useState(false);
-  const location = useLocation(); // To get the current URL path
+  const location = useLocation();
 
   const menuItems = [
     { label: "Home", to: "/" },
