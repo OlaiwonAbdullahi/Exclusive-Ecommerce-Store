@@ -7,11 +7,8 @@ import {
   CiGift,
 } from "react-icons/ci";
 import { GoPeople } from "react-icons/go";
-import { useState } from "react";
 
-const Sidebar = () => {
-  const [active, setActive] = useState("Home");
-
+const Sidebar = ({ active, setActive }) => {
   const menuItems = [
     { icon: TbSmartHome, label: "Home" },
     { icon: CiBoxList, label: "Orders" },

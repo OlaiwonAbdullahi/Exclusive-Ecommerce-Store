@@ -1,20 +1,20 @@
 import { MdKeyboardArrowDown } from "react-icons/md";
-import { PiDotsThreeOutlineThin } from "react-icons/pi";
+import { RxDotsHorizontal } from "react-icons/rx";
 
-const DashoardHeader = () => {
+const DashboardHeader = ({ active }) => {
   return (
-    <div className=" flex justify-between">
-      <div className="">DashBoard</div>
-      <div className=" flex gap-4 items-center">
-        <div className=" flex items-center bg-white rounded-md text-sm p-1">
+    <div className="flex justify-between items-center p-4 ">
+      <div className="text-xl font-bold">{active}</div>
+      <div className="flex gap-4 items-center">
+        <div className="flex items-center bg-white rounded-md text-sm p-2 shadow-sm">
           Oct 1 to Oct 23 <MdKeyboardArrowDown />
         </div>
-        <div className="">
-          <PiDotsThreeOutlineThin />
+        <div className="p-2">
+          <RxDotsHorizontal />
         </div>
       </div>
     </div>
   );
 };
 
-export default DashoardHeader;
+export default DashboardHeader;
