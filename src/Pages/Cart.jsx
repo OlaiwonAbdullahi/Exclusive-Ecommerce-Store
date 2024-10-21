@@ -65,14 +65,14 @@ const Cart = () => {
               </span>
               <span>${product.price}</span>
 
-              <div className="flex flex-row border border-text2 h-11 rounded">
+              <div className="flex flex-row border border-text2 md:h-11 h-6 rounded">
                 <input
                   type="number"
                   value={quantities[product.id] || 1}
                   readOnly
-                  className="bg-white text-2xl h-10 border-r border-r-text2 focus:outline-none p-1 w-16 text-center"
+                  className="bg-white text-base md:text-2xl h-5 md:h-10 border-r border-r-text2 focus:outline-none p-1 w-16 text-center"
                 />
-                <div className="h-10 flex flex-col">
+                <div className=" h-5 md:h-10 flex flex-col">
                   <button
                     onClick={() => handleIncrement(product.id)}
                     className="bg-white hover:bg-secondary2 hover:text-text items-center flex justify-center text-xl rounded-t-sm"
