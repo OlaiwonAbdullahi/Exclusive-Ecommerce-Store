@@ -5,6 +5,7 @@ import { PiShoppingBagThin, PiShoppingCartThin } from "react-icons/pi";
 import { useState } from "react";
 import { LiaTimesCircle, LiaTimesSolid } from "react-icons/lia";
 import { Link, useLocation } from "react-router-dom";
+import { auth } from "./firebase";
 
 const NavBar = () => {
   const [openUserMenu, setOpenUserMenu] = useState(false);
@@ -18,11 +19,20 @@ const NavBar = () => {
     { label: "Shop", to: "/shop" },
     { label: "Dashboard", to: "/admin" },
   ];
+
+  async function handleLogout() {
+    try {
+      await auth.signOut();
+      window.location.href = "/login";
+    } catch (error) {
+      console.error("Error Logging Out", error.message);
+    }
+  }
   return (
     <div className=" md:flex flex-col hidden w-full sticky top-0 bg-white z-20">
       <TopHeader />
       <div className=" flex justify-around p-3 items-center border-b border-b-text1/20">
-        <div className=" font-semibold text-button text-2xl">
+        <div className=" font-semibold text-button text-2xl whitespace-nowrap">
           Exclusive Store
         </div>
         <div className=" ">
@@ -32,8 +42,8 @@ const NavBar = () => {
                 <li
                   className={`${
                     location.pathname === item.to
-                      ? "text-text2 border-b-2  border-b-text1"
-                      : " hover:text-secondary2"
+                      ? "text-text2 border-b-2  border-b-text1 whitespace-nowrap"
+                      : " hover:text-secondary2 whitespace-nowrap"
                   }`}
                 >
                   {item.label}
@@ -56,7 +66,10 @@ const NavBar = () => {
         </div>
       </div>
       {openUserMenu && (
-        <UserDropDown closeMenu={() => setOpenUserMenu(false)} />
+        <UserDropDown
+          closeMenu={() => setOpenUserMenu(false)}
+          handleLogout={handleLogout}
+        />
       )}
     </div>
   );
@@ -64,7 +77,7 @@ const NavBar = () => {
 
 export default NavBar;
 
-function UserDropDown({ closeMenu }) {
+function UserDropDown({ closeMenu, handleLogout }) {
   return (
     <div className="fixed inset-0 z-50 flex  justify-end  pt-20 pr-28">
       <div className=" relative bg-gray-400 text-text bg-clip-padding backdrop-filter backdrop-blur-sm bg-opacity-50  w-1/5 max-w-md rounded-lg p-6 shadow-lg max-h-[40%] overflow-y-auto items-start gap-2 flex flex-col justify-center text-left">
@@ -92,10 +105,10 @@ function UserDropDown({ closeMenu }) {
           <CiStar className=" h-6 w-6" />
           <span>My Reviews</span>
         </div>
-        <div className=" flex gap-3">
+        <button className=" flex gap-3" onClick={() => handleLogout()}>
           <CiLogout className=" h-6 w-6" />
           <span>Logout</span>
-        </div>
+        </button>
       </div>
     </div>
   );

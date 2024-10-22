@@ -6,6 +6,9 @@ import { GoPlus } from "react-icons/go";
 import { FiMinus } from "react-icons/fi";
 import { useEffect, useState } from "react";
 import Path from "../Components/Path";
+import { useDispatch } from "react-redux";
+import { addItemToCart } from "../Redux/CartSystem";
+import { toast } from "react-toastify";
 
 const ProductPage = () => {
   const [quantity, setQuantity] = useState(1);
@@ -13,6 +16,7 @@ const ProductPage = () => {
   const [error, setError] = useState(null);
 
   const { id } = useParams();
+  const dispatch = useDispatch();
 
   const handleIncrement = () => {
     setQuantity((prevQuantity) => prevQuantity + 1);
@@ -140,13 +144,32 @@ const ProductPage = () => {
                 </button>
               </div>
 
-              <div>
+              <div
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(addItemToCart(product));
+                  toast.success("Item added to cart!", {
+                    position: "top-right",
+                    icon: <PiShoppingCartThin className=" h-6 w-6" />,
+                  });
+                }}
+              >
                 <Button width={120}>Buy Now</Button>
               </div>
 
-              <div className="border border-text2 rounded p-1 bg-white hover:bg-secondary2 hover:text-text hover:border-secondary2">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  dispatch(addItemToCart(product));
+                  toast.success("Item added to cart!", {
+                    position: "top-right",
+                    icon: <PiShoppingCartThin className=" h-6 w-6" />,
+                  });
+                }}
+                className="border border-text2 rounded p-1 bg-white hover:bg-secondary2 hover:text-text hover:border-secondary2"
+              >
                 <PiShoppingCartThin className="h-6 w-6" />
-              </div>
+              </button>
             </div>
 
             {/* Product details section */}
