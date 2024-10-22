@@ -4,6 +4,7 @@ import Path from "../Components/Path";
 import { auth, db } from "../Components/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import { toast } from "react-toastify";
+import { CiLogout } from "react-icons/ci";
 
 const Account = () => {
   const [userDetails, setUserDetails] = useState(null);
@@ -44,6 +45,15 @@ const Account = () => {
     fetchUserData();
   }, []);
 
+  async function handleLogout() {
+    try {
+      await auth.signOut();
+      window.location.href = "/login";
+    } catch (error) {
+      console.error("Error Logging Out", error.message);
+    }
+  }
+
   return (
     <div className="p-10 justify-center flex flex-col items-center">
       {loading ? (
@@ -81,6 +91,18 @@ const Account = () => {
               </div>
               <div>
                 <h2 className="font-semibold">My WishList</h2>
+                <div
+                  className="m-3"
+                  onClick={() => {
+                    handleLogout();
+                    toast.success("LogOut Successful", {
+                      position: "top-center",
+                      icon: <CiLogout />,
+                    });
+                  }}
+                >
+                  <Button width={120}>Log Out</Button>
+                </div>
               </div>
             </div>
 

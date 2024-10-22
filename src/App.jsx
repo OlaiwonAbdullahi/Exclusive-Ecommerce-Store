@@ -1,4 +1,9 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import HomePage from "./Pages/HomePage";
 import MobileNavBar from "./Components/MobileNavBar";
 import NavBar from "./Components/NavBar";
@@ -18,8 +23,17 @@ import "react-toastify/dist/ReactToastify.css";
 import { Provider } from "react-redux";
 import store from "./Components/Store";
 import Admin from "./Pages/Admin";
+import { useEffect, useState } from "react";
+import { auth } from "./Components/firebase";
 
 const App = () => {
+  const [user, setUser] = useState();
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      setUser(user);
+    });
+  });
   return (
     <Provider store={store}>
       <div className="font-Afacad">
