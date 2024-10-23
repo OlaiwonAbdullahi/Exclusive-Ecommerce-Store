@@ -87,7 +87,7 @@ const Shop = () => {
 export default Shop;
 function Product({ product, dispatch }) {
   return (
-    <div className="relative product bg-white rounded-lg shadow-md p-4 flex flex-col w-full max-w-[250px] mx-auto">
+    <div className="relative product bg-white rounded-lg shadow-md p-4 flex flex-col w-full md:max-w-[250px] mx-auto">
       <Link to={`/product/${product?.id}`}>
         <div className="relative bg-secondary rounded-md">
           <img

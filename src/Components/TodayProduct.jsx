@@ -74,12 +74,12 @@ export default TodayProduct;
 function Product({ product, dispatch }) {
   return (
     <Link to={`/product/${product?.id}`}>
-      <div className="relative product bg-white rounded-lg shadow-md p-4 flex flex-col w-full max-w-[250px] mx-auto">
+      <div className="relative product bg-white rounded-lg shadow-md p-4 flex flex-col w-full md:max-w-[250px] mx-auto">
         <div className="relative bg-secondary rounded-md">
           <img
-            src={product.thumbnail || "placeholder-image-url.jpg"} // Show thumbnail or placeholder if not available
+            src={product.thumbnail || "placeholder-image-url.jpg"}
             alt={product.title}
-            className="w-full h-auto object-cover" // Make the image fully responsive
+            className="w-full h-auto object-cover"
           />
 
           {/* Discount Percentage Badge */}
