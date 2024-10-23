@@ -37,7 +37,7 @@ const Shop = () => {
     };
 
     fetchAllProducts();
-  }, [categories]); // Fetch products whenever the categories change
+  }, [categories]);
 
   if (error) {
     return <div>Error: {error}</div>;
